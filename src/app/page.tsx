@@ -27,10 +27,10 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src="/placeholder.svg"
+        src="/images/corgi.jpg"
         alt="Your Name"
-        width={200}
-        height={200}
+        width={300}
+        height={300}
         className="rounded-full mb-8"
       />
       <h1 className="text-4xl font-bold mb-4">Oskari Palmgren</h1>
@@ -44,7 +44,7 @@ export default function Home() {
           href="https://github.com/palmgrenoskari"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-3xl hover:text-blue-400 transition-colors"
+          className="text-3xl hover:text-blue-400 transition-colors transform hover:scale-110 duration-300"
         >
           <FaGithub />
         </Link>
@@ -52,14 +52,19 @@ export default function Home() {
           href="https://linkedin.com/in/osgren"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-3xl hover:text-blue-400 transition-colors"
+          className="text-3xl hover:text-blue-400 transition-colors transform hover:scale-110 duration-300"
         >
           <FaLinkedin />
         </Link>
       </div>
       <div className="flex flex-wrap justify-center gap-2">
         {technologies.map((tech) => (
-          <TechBadge key={tech.name} name={tech.name} type={tech.type} />
+          <div
+            key={tech.name}
+            className="transition-all duration-300 hover:scale-110"
+          >
+            <TechBadge name={tech.name} type={tech.type} />
+          </div>
         ))}
       </div>
     </div>
