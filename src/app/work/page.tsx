@@ -1,7 +1,28 @@
 import WorkEntry from "@/components/WorkEntry";
 
+type TechnologyType =
+  | "language"
+  | "framework"
+  | "tool"
+  | "database"
+  | "cloud"
+  | "other";
+
+interface Technology {
+  name: string;
+  type: TechnologyType;
+}
+
 export default function WorkPage() {
-  const workEntries = [
+  const workEntries: {
+    logo: string;
+    company: string;
+    role: string;
+    period: string;
+    description: string;
+    technologies: Technology[];
+    isHypothetical?: boolean;
+  }[] = [
     {
       logo: "/images/diamond_transparent.png",
       company: "Your Company?",

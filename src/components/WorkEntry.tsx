@@ -17,14 +17,6 @@ interface WorkEntryProps {
   isHypothetical?: boolean;
 }
 
-const colors = [
-  "text-blue-400",
-  "text-green-400",
-  "text-yellow-400",
-  "text-purple-400",
-  "text-red-400",
-];
-
 export default function WorkEntry({
   logo,
   company,
@@ -32,7 +24,6 @@ export default function WorkEntry({
   period,
   description,
   technologies,
-  colorIndex,
   isHypothetical = false,
 }: WorkEntryProps) {
   return (
