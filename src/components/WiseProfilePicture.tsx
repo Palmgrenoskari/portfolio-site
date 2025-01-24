@@ -6,27 +6,40 @@ import Image from "next/image";
 const wisePhrases = [
   // TODO: Add more phrases, remove bad ones
   "The only true wisdom is in knowing you know nothing.",
-  "Life is like code - it works in mysterious ways.",
+  "Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present. – Master Oogway",
+  "Anyone can cook. – Chef Gusteau",
   "The best debugger is a good night's sleep.",
   "Every expert was once a beginner.",
-  "The more you learn, the more you realize how little you know.",
-  "Simplicity is the ultimate sophistication.",
+  "To infinity and beyond! – Buzz Lightyear",
+  "Simplicity is the ultimate sophistication. - Leonardo da Vinci",
   "The journey of a thousand miles begins with a single commit.",
-  "Stay curious, keep learning.",
-  "Code is poetry written in logic.",
-  "The best way to predict the future is to create it.",
+  "Comparison is the thief of joy. – Theodore Roosevelt",
+  "Not all those who wander are lost. – J.R.R. Tolkien",
+  "The only way to do great work is to love what you do. – Steve Jobs",
+  "Imagination is more important than knowledge. – Albert Einstein",
+  "Do or do not. There is no try. – Yoda",
+  "The greatest teacher, failure is. - Yoda",
 ];
 
 export default function WiseProfilePicture() {
   const [showBubble, setShowBubble] = useState(false);
   const [currentPhrase, setCurrentPhrase] = useState("");
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const handleClick = () => {
+    // Clear any existing timeout
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
     const randomPhrase =
       wisePhrases[Math.floor(Math.random() * wisePhrases.length)];
     setCurrentPhrase(randomPhrase);
     setShowBubble(true);
-    setTimeout(() => setShowBubble(false), 3000);
+
+    // Store the new timeout ID
+    const newTimeoutId = setTimeout(() => setShowBubble(false), 5000);
+    setTimeoutId(newTimeoutId);
   };
 
   return (
