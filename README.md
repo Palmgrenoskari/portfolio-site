@@ -2,6 +2,8 @@
 
 **Live at:** https://oskaripalmgren.dev
 
+---
+### Next.js boilerplate below
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
