@@ -35,7 +35,7 @@ export default function Home() {
         Technology.
         <br />
         <br />
-        Experienced in building full-stack AI-driven applications with Python
+        Experienced in building full-stack GenAI-driven applications with Python
         and Azure. Skilled in modern web technologies like JavaScript, React,
         and Next.js, creating dynamic and responsive applications.
       </p>
