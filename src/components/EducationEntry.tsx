@@ -6,9 +6,9 @@ interface EducationEntryProps {
   degree: string;
   period: string;
   description: string;
-  credits: string;
+  credits?: string;
   thesis?: string;
-  gpa: number;
+  gpa?: number;
 }
 
 export default function EducationEntry({
