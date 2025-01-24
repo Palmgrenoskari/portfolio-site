@@ -17,6 +17,7 @@ export default function Home() {
     { name: "Streamlit", type: "framework" as const },
     { name: "Git", type: "tool" as const },
     { name: "Docker", type: "tool" as const },
+    { name: "K8s", type: "tool" as const },
     { name: "Node.js", type: "tool" as const },
     { name: "MySQL", type: "database" as const },
     { name: "SQLite", type: "database" as const },
