@@ -63,7 +63,7 @@ export default function WorkPage() {
       role: "Warehouse Worker",
       period: "Jan 2020 - Present",
       description:
-        "Physical work in Hesburger's central warehouse. Full hours during the summer, 30-50h/month during studies.",
+        "Physical work in Hesburger's central warehouse. Full hours during the summer (excl. 2024), 30-50h/month during studies.",
       technologies: [
         { name: "People skills", type: "other" },
         { name: "Friendships", type: "other" },
