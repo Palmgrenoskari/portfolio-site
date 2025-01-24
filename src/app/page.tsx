@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechBadge from "@/components/TechBadge";
+import WiseProfilePicture from "@/components/WiseProfilePicture";
 
 export default function Home() {
   const technologies = [
@@ -26,18 +27,16 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <Image
-        src="/images/corgi.jpg"
-        alt="Your Name"
-        width={300}
-        height={300}
-        className="rounded-full mb-8"
-      />
+      <WiseProfilePicture />
       <h1 className="text-4xl font-bold mb-4">Oskari Palmgren</h1>
-      <p className="text-xl text-gray-300 mb-6 text-center max-w-2xl">
-        Full-stack developer passionate about creating beautiful and functional
-        web applications. Experienced in modern JavaScript frameworks and always
-        eager to learn new technologies.
+      <p className="text-xl text-gray-300 mb-6 text-center max-w-3xl">
+        Master's student in ICT specializing in Data Analytics and Health
+        Technology.
+        <br />
+        <br />
+        Experienced in building full-stack AI-driven applications with Python
+        and Azure. Skilled in modern web technologies like JavaScript, React,
+        and Next.js, creating dynamic and responsive applications.
       </p>
       <div className="flex space-x-4 mb-8">
         <Link
