@@ -1,19 +1,15 @@
 import Link from "next/link";
-import Image from "next/image";
+import LogoWithName from "@/components/ClickableLogo";
 
 export default function Header() {
   return (
     <header className="bg-gray-800 text-white py-4">
       <nav className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/images/corgi.jpg"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="rounded-full"
+          <LogoWithName
+            name="Oskari Palmgren"
+            description="MSc Student & Aspiring GenAI Dev"
           />
-          <span className="text-2xl font-bold">Your Name</span>
         </Link>
         <ul className="flex space-x-4">
           <li>
