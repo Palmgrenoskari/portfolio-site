@@ -51,6 +51,7 @@ export default function WorkPage() {
         { name: "Python", type: "language" },
         { name: "Streamlit", type: "framework" },
         { name: "Docker", type: "tool" },
+        { name: "K8s", type: "tool" },
         { name: "Git", type: "tool" },
         { name: "Oracle SQL", type: "database" },
         { name: "Azure", type: "cloud" },
