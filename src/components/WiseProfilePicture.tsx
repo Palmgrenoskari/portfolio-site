@@ -54,7 +54,7 @@ const wisePhrases = [
     author: "Yoda",
   },
   {
-    message: "The greatest teacher, failure is. - Yoda",
+    message: "The greatest teacher, failure is.",
     author: "Yoda",
   },
 ];
