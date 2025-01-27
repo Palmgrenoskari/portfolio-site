@@ -29,6 +29,11 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <WiseProfilePicture />
+      <p className="text-xs text-gray-500 mt-2 text-center italic">
+        Temporary corgi placeholder (because who doesn't love these fluff
+        balls?)
+      </p>
+      <br />
       <h1 className="text-4xl font-bold mb-4">Oskari Palmgren</h1>
       <p className="text-xl text-gray-300 mb-6 text-center max-w-3xl">
         Master's student in ICT specializing in Data Analytics and Health
