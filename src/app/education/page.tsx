@@ -42,6 +42,7 @@ export default function EducationPage() {
         { name: "Unix", type: "tool" as const },
         { name: "CMD", type: "tool" as const },
         { name: "MATLAB", type: "tool" as const },
+        { name: "Computer Science", type: "hard_skill" as const },
         { name: "Mathematics", type: "hard_skill" as const },
         { name: "Statistics", type: "hard_skill" as const },
         { name: "Physics", type: "hard_skill" as const },
