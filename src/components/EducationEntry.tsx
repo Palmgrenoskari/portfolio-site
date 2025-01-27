@@ -1,14 +1,28 @@
 import Image from "next/image";
+import TechBadge from "./TechBadge";
+
+interface Technology {
+  name: string;
+  type:
+    | "language"
+    | "framework"
+    | "tool"
+    | "database"
+    | "cloud"
+    | "soft_skill"
+    | "hard_skill";
+}
 
 interface EducationEntryProps {
   logo: string;
   institution: string;
   degree: string;
   period: string;
-  description: string;
+  description?: string;
   credits?: string;
   thesis?: string;
   gpa?: number;
+  technologies?: Technology[];
 }
 
 export default function EducationEntry({
@@ -20,6 +34,7 @@ export default function EducationEntry({
   credits,
   thesis,
   gpa,
+  technologies,
 }: EducationEntryProps) {
   return (
     <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
@@ -41,7 +56,16 @@ export default function EducationEntry({
       {credits && <p className="text-gray-300 mb-2">Credits: {credits}</p>}
       {thesis && <p className="text-gray-300 mb-2">Thesis: {thesis}</p>}
       {gpa !== undefined && (
-        <p className="text-gray-300">GPA: {gpa.toFixed(2)}</p>
+        <p className="text-gray-300 mb-4 whitespace-pre-line">
+          GPA: {gpa.toFixed(2)}
+        </p>
+      )}
+      {technologies && (
+        <div className="flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <TechBadge key={tech.name} name={tech.name} type={tech.type} />
+          ))}
+        </div>
       )}
     </div>
   );

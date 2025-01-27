@@ -3,7 +3,14 @@ import TechBadge from "./TechBadge";
 
 interface Technology {
   name: string;
-  type: "language" | "framework" | "tool" | "database" | "cloud" | "other";
+  type:
+    | "language"
+    | "framework"
+    | "tool"
+    | "database"
+    | "cloud"
+    | "soft_skill"
+    | "hard_skill";
 }
 
 interface WorkEntryProps {
@@ -13,7 +20,6 @@ interface WorkEntryProps {
   period: string;
   description?: string;
   technologies?: Technology[];
-  colorIndex: number;
   isHypothetical?: boolean;
 }
 

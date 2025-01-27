@@ -4,7 +4,8 @@ type TechType =
   | "tool"
   | "database"
   | "cloud"
-  | "other";
+  | "soft_skill"
+  | "hard_skill";
 
 const techColors: Record<TechType, string> = {
   language: "bg-blue-600",
@@ -12,7 +13,8 @@ const techColors: Record<TechType, string> = {
   tool: "bg-yellow-600",
   database: "bg-purple-600",
   cloud: "bg-red-600",
-  other: "bg-teal-600",
+  soft_skill: "bg-teal-600",
+  hard_skill: "bg-indigo-600",
 };
 
 interface TechBadgeProps {

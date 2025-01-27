@@ -6,7 +6,7 @@ type TechnologyType =
   | "tool"
   | "database"
   | "cloud"
-  | "other";
+  | "soft_skill";
 
 interface Technology {
   name: string;
@@ -35,7 +35,7 @@ export default function WorkPage() {
         { name: "Tools", type: "tool" },
         { name: "Databases", type: "database" },
         { name: "Cloud", type: "cloud" },
-        { name: "Soft Skills", type: "other" },
+        { name: "Soft Skills", type: "soft_skill" },
       ],
       isHypothetical: true,
     },
@@ -55,7 +55,7 @@ export default function WorkPage() {
         { name: "Git", type: "tool" },
         { name: "Oracle SQL", type: "database" },
         { name: "Azure", type: "cloud" },
-        { name: "Business Skills", type: "other" },
+        { name: "Business Skills", type: "soft_skill" },
       ],
     },
     {
@@ -66,9 +66,9 @@ export default function WorkPage() {
       description:
         "Physical work in Hesburger's central warehouse. Full hours during the summer (excl. 2024), 30-50h/month during studies.",
       technologies: [
-        { name: "People skills", type: "other" },
-        { name: "Friendships", type: "other" },
-        { name: "Physical health", type: "other" },
+        { name: "People skills", type: "soft_skill" },
+        { name: "Friendships", type: "soft_skill" },
+        { name: "Physical health", type: "soft_skill" },
       ],
     },
   ];
@@ -79,7 +79,7 @@ export default function WorkPage() {
         Work Experience
       </h1>
       {workEntries.map((entry, index) => (
-        <WorkEntry key={index} {...entry} colorIndex={index} />
+        <WorkEntry key={index} {...entry} />
       ))}
     </div>
   );
