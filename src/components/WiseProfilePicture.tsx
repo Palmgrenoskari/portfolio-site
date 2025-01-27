@@ -10,8 +10,32 @@ const wisePhrases = [
     author: "Master Oogway",
   },
   {
-    message: "Anyone can cook.",
-    author: "Chef Gusteau",
+    message:
+      "I know that I am intelligent, because I know that I know nothing.",
+    author: "Socrates",
+  },
+  {
+    message: "Life is very simple but we insist on making it complicated.",
+    author: "Confucius",
+  },
+  {
+    message: "I have not failed. I've just found 10,000 ways that won't work.",
+    author: "Thomas Edison",
+  },
+  {
+    message:
+      "The greatest enemy of knowledge is not ignorance; it is the illusion of knowledge.",
+    author: "Stephen Hawking",
+  },
+  {
+    message:
+      "The difference between genius and stupidity is that genius has its limits.",
+    author: "Albert Einstein",
+  },
+  {
+    message:
+      "If at first you don’t succeed, then skydiving definitely isn’t for you.",
+    author: "Steven Wright",
   },
   {
     message: "The best debugger is a good night's sleep.",
@@ -48,6 +72,16 @@ const wisePhrases = [
   {
     message: "Imagination is more important than knowledge.",
     author: "Albert Einstein",
+  },
+  {
+    message:
+      "We are what we repeatedly do, therefore, excellence is not an act, but a habit",
+    author: "Aristotle",
+  },
+  {
+    message:
+      "Always remember that you are absolutely unique. Just like everyone else.",
+    author: "Margaret Mead",
   },
   {
     message: "Do or do not. There is no try.",
@@ -115,7 +149,17 @@ export default function WiseProfilePicture() {
           alt="Profile Picture"
           width={300}
           height={300}
-          className="rounded-full mb-8 cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+          className="rounded-full mb-8 cursor-pointer"
+          onClick={handleClick}
+        />
+        <Image
+          src="/images/intelligent_corgi.png"
+          alt="Intelligent Profile Picture"
+          width={300}
+          height={300}
+          className={`rounded-full mb-8 cursor-pointer absolute top-0 left-0 transition-opacity duration-1000 ${
+            showBubble ? "opacity-100" : "opacity-0"
+          }`}
           onClick={handleClick}
         />
         {!showBubble && (
