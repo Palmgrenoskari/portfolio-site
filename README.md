@@ -2,6 +2,16 @@
 
 **Live at:** https://oskaripalmgren.dev
 
+**TODO:**
+
+1) Get rid of the corgi placeholder image :D
+2) Finish projects tab
+3) Add techbadges to education too?
+4) Downloadable Resume
+5) Languages Fi/Eng
+6) About me section, maybe
+7) Will see
+
 ---
 ### Next.js boilerplate below
 
