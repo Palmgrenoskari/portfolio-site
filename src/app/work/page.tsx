@@ -32,8 +32,8 @@ export default function WorkPage() {
       technologies: [
         { name: "Languages", type: "language" },
         { name: "Frameworks", type: "framework" },
-        { name: "Tools", type: "tool" },
         { name: "Databases", type: "database" },
+        { name: "Tools", type: "tool" },
         { name: "Cloud", type: "cloud" },
         { name: "Soft Skills", type: "soft_skill" },
       ],
@@ -50,10 +50,10 @@ export default function WorkPage() {
       technologies: [
         { name: "Python", type: "language" },
         { name: "Streamlit", type: "framework" },
+        { name: "Oracle SQL", type: "database" },
         { name: "Docker", type: "tool" },
         { name: "K8s", type: "tool" },
         { name: "Git", type: "tool" },
-        { name: "Oracle SQL", type: "database" },
         { name: "Azure", type: "cloud" },
         { name: "Business Skills", type: "soft_skill" },
       ],

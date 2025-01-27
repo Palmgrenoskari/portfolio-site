@@ -14,7 +14,6 @@ export default function EducationPage() {
       technologies: [
         { name: "Python", type: "language" as const },
         { name: "Data Science", type: "hard_skill" as const },
-
         { name: "Machine Learning", type: "hard_skill" as const },
         { name: "Deep Learning", type: "hard_skill" as const },
         { name: "Computer Vision", type: "hard_skill" as const },
