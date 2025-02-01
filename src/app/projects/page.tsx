@@ -1,5 +1,6 @@
 import ProjectEntry from "@/components/ProjectEntry";
-import ProjectPlanningSection from "@/components/ProjectPlanningSection";
+import ProjectPlanningSection from "@/components/ProjectPlans";
+import SmallerProjects from "@/components/SmallerTasks";
 
 export default function ProjectsPage() {
   const projects = [
@@ -28,6 +29,46 @@ export default function ProjectsPage() {
         { name: "Streamlit", type: "framework" as const },
         { name: "Oura API", type: "tool" as const },
       ],
+    },
+  ];
+
+  const smallerProjects = [
+    {
+      title:
+        "BSc Thesis: Comparison of CNN Architectures in Fruit Recognition.",
+      description: `Trained three different CNN models on the Fruits360 dataset.
+
+      Compared model performance on various subsets of the dataset based on accuracy and visual inspection of confusion matrices.
+
+      Data: 131 classes, 90380 color images from Fruits-360 dataset @ kaggle.
+      Models: VGG16, Resnet50V2, MobileNetV2
+      `,
+      technologies: [
+        { name: "Python", type: "language" as const },
+        { name: "TensorFlow", type: "framework" as const },
+        { name: "Keras", type: "framework" as const },
+        { name: "Jupyter", type: "tool" as const },
+      ],
+      githubUrl:
+        "https://github.com/Palmgrenoskari/machineLearning/tree/main/BSc",
+    },
+    {
+      title: "Image Classification with PyTorch",
+      description: `Image Classification using a pre-trained EfficientNet-B4 CNN model.
+
+      Trained a "classification head" on top of a pre-trained EfficientNet-B4 CNN model on the 100-bird-species dataset (no longer available).
+
+      Idea was to gain some exposure to PyTorch during an ICT laboratory course.
+
+      Data: 184 classes, 29274 color images from 100-bird-species dataset @ kaggle.
+      Model: EfficientNet-B4 (pre-trained)
+      `,
+      technologies: [
+        { name: "Python", type: "language" as const },
+        { name: "PyTorch", type: "framework" as const },
+        { name: "Jupyter", type: "tool" as const },
+      ],
+      githubUrl: "https://github.com/Palmgrenoskari/Birds_CNN_PyTorch",
     },
   ];
 
@@ -75,7 +116,7 @@ export default function ProjectsPage() {
   return (
     <div className="max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold mb-8 text-center text-purple-400">
-        Projects
+        Main Projects
       </h1>
       <div className="mb-12">
         {projects.map((project, index) => (
@@ -84,9 +125,18 @@ export default function ProjectsPage() {
       </div>
 
       <h2 className="text-2xl font-bold mb-6 text-center text-purple-400">
-        Project Drawing Board
+        Smaller Projects
       </h2>
-      <div className="bg-gray-900 rounded-lg p-6 mb-8 shadow-lg">
+      <div className="mb-12">
+        {smallerProjects.map((project, index) => (
+          <SmallerProjects key={index} {...project} />
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold mb-6 text-center text-purple-400">
+        Project Pipeline
+      </h2>
+      <div className="mb-12">
         {projectsPlanned.map((project, index) => (
           <ProjectPlanningSection key={index} {...project} />
         ))}

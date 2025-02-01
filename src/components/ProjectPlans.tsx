@@ -9,23 +9,23 @@ interface Technology {
   type: "language" | "framework" | "tool" | "database" | "cloud";
 }
 
-interface InProgressProjectProps {
+interface ProjectPlansProps {
   title: string;
   description: string;
   plannedTechnologies: Technology[];
   status: "planning" | "in-progress";
 }
 
-export default function InProgressProject({
+export default function ProjectPlans({
   title,
   description,
   plannedTechnologies,
   status,
-}: InProgressProjectProps) {
+}: ProjectPlansProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750">
+    <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -38,11 +38,8 @@ export default function InProgressProject({
         )}
       </div>
 
-      {isExpanded && (
+      {isExpanded ? (
         <div className="mt-4">
-          <p className="text-gray-300 mb-4 whitespace-pre-line">
-            {description}
-          </p>
           <div className="flex items-center mb-4">
             <span className="text-sm font-semibold mr-2">Status:</span>
             <span
@@ -55,10 +52,18 @@ export default function InProgressProject({
               {status === "planning" ? "Planning" : "In Progress"}
             </span>
           </div>
+          <p className="text-gray-300 mb-4 whitespace-pre-line">
+            {description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {plannedTechnologies.map((tech) => (
+              <TechBadge key={tech.name} name={tech.name} type={tech.type} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-4">
           <div>
-            <h4 className="text-sm font-semibold mb-2">
-              Planned Technologies:
-            </h4>
             <div className="flex flex-wrap gap-2">
               {plannedTechnologies.map((tech) => (
                 <TechBadge key={tech.name} name={tech.name} type={tech.type} />
