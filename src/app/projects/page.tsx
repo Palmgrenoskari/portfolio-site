@@ -70,6 +70,19 @@ export default function ProjectsPage() {
       ],
       githubUrl: "https://github.com/Palmgrenoskari/Birds_CNN_PyTorch",
     },
+    {
+      title: "Automated Minesweeper Solver",
+      description: `Automated Minesweeper Solver using pyautogui mouse, keyboard and image recognition capabilities.
+
+      The solver is currently only solving easy boards on minesweeper.online no-guessing-mode.
+      Getting IP banned every few runs made it impractical to continue.
+      Might revisit this idea in the future with desktop versions of minesweeper.`,
+      technologies: [
+        { name: "Python", type: "language" as const },
+        { name: "pyautogui", type: "framework" as const },
+      ],
+      githubUrl: "https://github.com/Palmgrenoskari/minesweeper_automated",
+    },
   ];
 
   const projectsPlanned = [
