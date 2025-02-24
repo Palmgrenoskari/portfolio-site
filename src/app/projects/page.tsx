@@ -99,7 +99,7 @@ export default function ProjectsPage() {
         { name: "SQLite", type: "database" as const },
         { name: "Riot API", type: "tool" as const },
       ],
-      status: "planning" as const,
+      status: "in-progress" as const,
     },
     {
       title: "League of Legends Analytics App",
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
         { name: "SQLite", type: "database" as const },
         { name: "Riot API", type: "tool" as const },
       ],
-      status: "planning" as const,
+      status: "in-progress" as const,
     },
   ];
 
