@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Github } from "lucide-react";
 import TechBadge from "./TechBadge";
 
 interface Technology {
@@ -14,6 +14,7 @@ interface ProjectPlansProps {
   description: string;
   plannedTechnologies: Technology[];
   status: "planning" | "in-progress";
+  githubUrl?: string;
 }
 
 export default function ProjectPlans({
@@ -21,6 +22,7 @@ export default function ProjectPlans({
   description,
   plannedTechnologies,
   status,
+  githubUrl,
 }: ProjectPlansProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -60,6 +62,19 @@ export default function ProjectPlans({
               <TechBadge key={tech.name} name={tech.name} type={tech.type} />
             ))}
           </div>
+          {status === "in-progress" && githubUrl && (
+            <div className="mt-4">
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-blue-400 hover:text-blue-300"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                View on GitHub
+              </a>
+            </div>
+          )}
         </div>
       ) : (
         <div className="mt-4">

@@ -87,21 +87,6 @@ export default function ProjectsPage() {
 
   const projectsPlanned = [
     {
-      title: "League of Legends Match Data Processing Pipeline",
-      description: `Need to build a pipeline that:
-      1) Fetches all the data (from "not so great" Riot API according to reddit)
-      2) Extracts meaningful information from the data, such as pick rates, win rates, ban rates and other interesting statistics.
-      3) Stores the data in SQLite
-      
-      And schedule this pipeline to run for example once a day.`,
-      plannedTechnologies: [
-        { name: "Python", type: "language" as const },
-        { name: "SQLite", type: "database" as const },
-        { name: "Riot API", type: "tool" as const },
-      ],
-      status: "in-progress" as const,
-    },
-    {
       title: "League of Legends Analytics App",
       description: `A web app where users can explore League of Legends related data.
       
@@ -110,10 +95,11 @@ export default function ProjectsPage() {
       - Champion performance
       - Build and itemization performance
       - Leaderboards
-      - Matchups
-      - Global trends
+      - Match History
+      - Opponent Scouting
 
-      Requires data from the pipeline above.`,
+      GitHub has progress images for now.
+      Unfortunately can't deploy/publish without Riot Games approval. (Pending)`,
       plannedTechnologies: [
         { name: "TypeScript", type: "language" as const },
         { name: "React", type: "framework" as const },
@@ -123,6 +109,24 @@ export default function ProjectsPage() {
         { name: "Riot API", type: "tool" as const },
       ],
       status: "in-progress" as const,
+      githubUrl: "https://github.com/palmgrenoskari/league_site" as const,
+    },
+    {
+      title: "League of Legends Match Data Processing Pipeline",
+      description: `Need to build a pipeline that:
+      
+      1) Crawls large amounts of League of Legends related data such as match history data for meaningful aggregates (winrate, pickrate, etc)
+      2) Extracts these aggregates from the data
+      3) Store in SQLite and eventually schedule this to run consistently.
+      
+      Currently bottlenecked by very low API call rate limit. (Product registration pending)`,
+      plannedTechnologies: [
+        { name: "Python", type: "language" as const },
+        { name: "SQLite", type: "database" as const },
+        { name: "Riot API", type: "tool" as const },
+      ],
+      status: "in-progress" as const,
+      githubUrl: "https://github.com/palmgrenoskari/league_data" as const,
     },
   ];
 
