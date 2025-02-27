@@ -1,55 +1,48 @@
 import Link from "next/link";
 import LogoWithName from "@/components/ClickableLogo";
+import MobileNav from "./MobileNav";
+
+const routes = [
+  { href: "/", label: "Home", hoverColor: "text-blue-400" },
+  { href: "/work", label: "Work", hoverColor: "text-green-400" },
+  { href: "/education", label: "Education", hoverColor: "text-yellow-400" },
+  { href: "/projects", label: "Projects", hoverColor: "text-purple-400" },
+  {
+    href: "/certifications",
+    label: "Certifications",
+    hoverColor: "text-red-400",
+  },
+];
 
 export default function Header() {
   return (
-    <header className="bg-gray-800 text-white py-4">
-      <nav className="container mx-auto px-4 flex justify-between items-center">
+    <header className="bg-gray-800 text-white py-4 w-full">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <LogoWithName
             name="Oskari Palmgren"
-            description="MSc Student & Aspiring Dev"
+            description="MSc Student & Full-Stack Developer"
           />
         </Link>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/" className="hover:text-blue-400 transition-colors">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/work"
-              className="hover:text-green-400 transition-colors"
-            >
-              Work
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/education"
-              className="hover:text-yellow-400 transition-colors"
-            >
-              Education
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/projects"
-              className="hover:text-purple-400 transition-colors"
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/certifications"
-              className="hover:text-red-400 transition-colors"
-            >
-              Certifications
-            </Link>
-          </li>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex space-x-4">
+          {routes.map((route) => (
+            <li key={route.href}>
+              <Link
+                href={route.href}
+                className={`hover:${route.hoverColor} transition-colors px-2`}
+              >
+                {route.label}
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <MobileNav routes={routes} />
+        </div>
       </nav>
     </header>
   );

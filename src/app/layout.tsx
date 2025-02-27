@@ -18,12 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-gray-900 text-gray-100 min-h-screen flex flex-col`}
+        className={`${inter.className} bg-gray-900 text-gray-100 min-h-screen flex flex-col w-full`}
       >
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          {children}
-        </main>
+        <main className="flex-grow w-full px-4 py-8">{children}</main>
         <Footer />
       </body>
     </html>

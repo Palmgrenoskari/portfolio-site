@@ -27,7 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full px-4 sm:px-6 lg:px-8">
       <WiseProfilePicture />
       <p className="text-xs text-gray-500 mt-2 text-center italic">
         Temporary corgi placeholder (because who doesn't love these fluff
@@ -62,7 +62,7 @@ export default function Home() {
           <FaLinkedin />
         </Link>
       </div>
-      <div className="flex flex-wrap justify-center gap-2">
+      <div className="flex flex-wrap justify-center gap-2 w-full">
         {technologies.map((tech) => (
           <div
             key={tech.name}
