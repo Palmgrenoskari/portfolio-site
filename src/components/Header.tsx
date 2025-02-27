@@ -21,7 +21,7 @@ export default function Header() {
         <Link href="/" className="flex items-center space-x-2">
           <LogoWithName
             name="Oskari Palmgren"
-            description="MSc Student & Full-Stack Developer"
+            description="MSc Student & Aspiring Dev"
           />
         </Link>
 
