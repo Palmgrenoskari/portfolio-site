@@ -51,6 +51,7 @@ export default function MobileNav({ routes }: MobileNavProps) {
             <Link
               key={route.href}
               href={route.href}
+              onClick={() => setIsOpen(false)}
               className={`block px-4 py-2 text-sm text-white hover:${route.hoverColor} hover:bg-gray-600`}
             >
               {route.label}
