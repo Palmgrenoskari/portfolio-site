@@ -3,14 +3,18 @@ import LogoWithName from "@/components/ClickableLogo";
 import MobileNav from "./MobileNav";
 
 const routes = [
-  { href: "/", label: "Home", hoverColor: "text-blue-400" },
-  { href: "/work", label: "Work", hoverColor: "text-green-400" },
-  { href: "/education", label: "Education", hoverColor: "text-yellow-400" },
-  { href: "/projects", label: "Projects", hoverColor: "text-purple-400" },
+  { href: "/", label: "Home", hoverColor: "hover:text-blue-400" },
+  { href: "/work", label: "Work", hoverColor: "hover:text-green-400" },
+  {
+    href: "/education",
+    label: "Education",
+    hoverColor: "hover:text-yellow-400",
+  },
+  { href: "/projects", label: "Projects", hoverColor: "hover:text-purple-400" },
   {
     href: "/certifications",
     label: "Certifications",
-    hoverColor: "text-red-400",
+    hoverColor: "hover:text-red-400",
   },
 ];
 
@@ -31,7 +35,7 @@ export default function Header() {
             <li key={route.href}>
               <Link
                 href={route.href}
-                className={`hover:${route.hoverColor} transition-colors px-2`}
+                className={`${route.hoverColor} transition-colors px-2`}
               >
                 {route.label}
               </Link>
