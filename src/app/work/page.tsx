@@ -24,11 +24,13 @@ export default function WorkPage() {
     isHypothetical?: boolean;
   }[] = [
     {
-      logo: "/images/diamond_transparent.png",
-      company: "Your Company?",
-      role: "Dream Position",
-      period: "Future",
-      description: "Excited to see what the future holds!",
+      logo: "/images/digia_logo_v1.png",
+      company: "Digia",
+      role: "Software Robotics Developer",
+      period: "Aug 2025 - X",
+      description: `Developing Software Robotics Automations, including customer collaboration and automation maintenance responsibilities.
+        
+        Begins in August 2025.`,
       technologies: [
         { name: "Languages", type: "language" },
         { name: "Frameworks", type: "framework" },
@@ -37,7 +39,7 @@ export default function WorkPage() {
         { name: "Cloud", type: "cloud" },
         { name: "Soft Skills", type: "soft_skill" },
       ],
-      isHypothetical: true,
+      // isHypothetical: true,
     },
     {
       logo: "/images/telia_transparent.png",

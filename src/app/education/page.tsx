@@ -9,8 +9,8 @@ export default function EducationPage() {
       period: "Sep 2023 - Present",
       description:
         "Currently pursuing a Master's degree in ICT with a specialization in Data Analytics and Health Technology.",
-      credits: "50/120",
-      gpa: 4.12,
+      credits: "65/120",
+      gpa: 4.07,
       technologies: [
         { name: "Python", type: "language" as const },
         { name: "Data Science", type: "hard_skill" as const },
