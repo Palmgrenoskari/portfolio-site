@@ -3,19 +3,9 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Github } from "lucide-react";
 import TechBadge from "./TechBadge";
+import { PlannedProject } from "@/data/types";
 
-interface Technology {
-  name: string;
-  type: "language" | "framework" | "tool" | "database" | "cloud";
-}
-
-interface ProjectPlansProps {
-  title: string;
-  description: string;
-  plannedTechnologies: Technology[];
-  status: "planning" | "in-progress";
-  githubUrl?: string;
-}
+type ProjectPlansProps = PlannedProject;
 
 export default function ProjectPlans({
   title,

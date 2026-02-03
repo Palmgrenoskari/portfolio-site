@@ -3,18 +3,9 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Github } from "lucide-react";
 import TechBadge from "./TechBadge";
+import { SmallerProject } from "@/data/types";
 
-interface Technology {
-  name: string;
-  type: "language" | "framework" | "tool" | "database" | "cloud";
-}
-
-interface SmallerProjectsProps {
-  title: string;
-  description: string;
-  technologies: Technology[];
-  githubUrl?: string;
-}
+type SmallerProjectsProps = SmallerProject;
 
 export default function SmallerTasks({
   title,

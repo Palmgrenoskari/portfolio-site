@@ -1,29 +1,8 @@
 import Image from "next/image";
 import TechBadge from "./TechBadge";
+import { EducationEntry as EducationEntryType } from "@/data/types";
 
-interface Technology {
-  name: string;
-  type:
-    | "language"
-    | "framework"
-    | "tool"
-    | "database"
-    | "cloud"
-    | "soft_skill"
-    | "hard_skill";
-}
-
-interface EducationEntryProps {
-  logo: string;
-  institution: string;
-  degree: string;
-  period: string;
-  description?: string;
-  credits?: string;
-  thesis?: string;
-  gpa?: number;
-  technologies?: Technology[];
-}
+type EducationEntryProps = EducationEntryType;
 
 export default function EducationEntry({
   logo,

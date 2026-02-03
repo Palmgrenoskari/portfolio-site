@@ -1,16 +1,8 @@
 import TechBadge from "./TechBadge";
 import { ExternalLink } from "lucide-react";
-interface Technology {
-  name: string;
-  type: "language" | "framework" | "tool" | "database" | "cloud";
-}
+import { Project } from "@/data/types";
 
-interface ProjectEntryProps {
-  title: string;
-  description: string;
-  liveUrl: string;
-  technologies: Technology[];
-}
+type ProjectEntryProps = Project;
 export default function ProjectEntry({
   title,
   description,

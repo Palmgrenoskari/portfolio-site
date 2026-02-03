@@ -1,13 +1,6 @@
-type TechType =
-  | "language"
-  | "framework"
-  | "tool"
-  | "database"
-  | "cloud"
-  | "soft_skill"
-  | "hard_skill";
+import { TechnologyType } from "@/data/types";
 
-const techColors: Record<TechType, string> = {
+const techColors: Record<TechnologyType, string> = {
   language: "bg-blue-600",
   framework: "bg-green-600",
   tool: "bg-yellow-600",
@@ -19,7 +12,7 @@ const techColors: Record<TechType, string> = {
 
 interface TechBadgeProps {
   name: string;
-  type: TechType;
+  type: TechnologyType;
 }
 
 export default function TechBadge({ name, type }: TechBadgeProps) {

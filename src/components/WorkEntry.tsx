@@ -1,27 +1,8 @@
 import Image from "next/image";
 import TechBadge from "./TechBadge";
+import { WorkEntry as WorkEntryType } from "@/data/types";
 
-interface Technology {
-  name: string;
-  type:
-    | "language"
-    | "framework"
-    | "tool"
-    | "database"
-    | "cloud"
-    | "soft_skill"
-    | "hard_skill";
-}
-
-interface WorkEntryProps {
-  logo: string;
-  company: string;
-  role: string;
-  period: string;
-  description?: string;
-  technologies?: Technology[];
-  isHypothetical?: boolean;
-}
+type WorkEntryProps = WorkEntryType;
 
 export default function WorkEntry({
   logo,

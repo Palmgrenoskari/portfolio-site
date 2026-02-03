@@ -2,30 +2,9 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechBadge from "@/components/TechBadge";
 import WiseProfilePicture from "@/components/WiseProfilePicture";
+import { technologies } from "@/data";
 
 export default function Home() {
-  const technologies = [
-    { name: "Python", type: "language" as const },
-    { name: "JavaScript", type: "language" as const },
-    { name: "TypeScript", type: "language" as const },
-    { name: "HTML5", type: "language" as const },
-    { name: "CSS3", type: "language" as const },
-    { name: "R", type: "language" as const },
-    { name: "React", type: "framework" as const },
-    { name: "Next.js", type: "framework" as const },
-    { name: "Streamlit", type: "framework" as const },
-    { name: "Tailwind CSS", type: "framework" as const },
-    { name: "MySQL", type: "database" as const },
-    { name: "SQLite", type: "database" as const },
-    { name: "MongoDB", type: "database" as const },
-    { name: "Git", type: "tool" as const },
-    { name: "Docker", type: "tool" as const },
-    { name: "K8s", type: "tool" as const },
-    { name: "Node.js", type: "tool" as const },
-    { name: "Azure", type: "cloud" as const },
-    { name: "AWS", type: "cloud" as const },
-  ];
-
   return (
     <div className="flex flex-col items-center w-full px-4 sm:px-6 lg:px-8">
       <WiseProfilePicture />
