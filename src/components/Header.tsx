@@ -1,7 +1,6 @@
 import Link from "next/link";
 import LogoWithName from "@/components/ClickableLogo";
 import MobileNav from "./MobileNav";
-import ModeToggle from "./ModeToggle";
 import { routes } from "@/data";
 
 export default function Header() {
@@ -16,25 +15,21 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
-          <ul className="flex space-x-4">
-            {routes.map((route) => (
-              <li key={route.href}>
-                <Link
-                  href={route.href}
-                  className={`${route.hoverColor} transition-colors px-2`}
-                >
-                  {route.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <ModeToggle />
-        </div>
+        <ul className="hidden md:flex space-x-4">
+          {routes.map((route) => (
+            <li key={route.href}>
+              <Link
+                href={route.href}
+                className={`${route.hoverColor} transition-colors px-2`}
+              >
+                {route.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center gap-3">
-          <ModeToggle />
+        <div className="md:hidden">
           <MobileNav routes={routes} />
         </div>
       </nav>
