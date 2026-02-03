@@ -2,6 +2,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ModeSelectionModal from "@/components/ModeSelectionModal";
+import { PortfolioModeProvider } from "@/context/PortfolioModeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +22,12 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gray-900 text-gray-100 min-h-screen flex flex-col w-full`}
       >
-        <Header />
-        <main className="flex-grow w-full px-4 py-8">{children}</main>
-        <Footer />
+        <PortfolioModeProvider>
+          <ModeSelectionModal />
+          <Header />
+          <main className="flex-grow w-full px-4 py-8">{children}</main>
+          <Footer />
+        </PortfolioModeProvider>
       </body>
     </html>
   );
