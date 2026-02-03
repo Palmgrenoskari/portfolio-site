@@ -38,10 +38,16 @@ export default function ProjectPlans({
               className={`px-2 py-1 rounded-full text-xs ${
                 status === "planning"
                   ? "bg-yellow-600 text-yellow-100"
-                  : "bg-green-600 text-green-100"
+                  : status === "archived"
+                    ? "bg-gray-600 text-gray-100"
+                    : "bg-green-600 text-green-100"
               }`}
             >
-              {status === "planning" ? "Planning" : "In Progress"}
+              {status === "planning"
+                ? "Planning"
+                : status === "archived"
+                  ? "Archived"
+                  : "In Progress"}
             </span>
           </div>
           <p className="text-gray-300 mb-4 whitespace-pre-line">
@@ -52,7 +58,7 @@ export default function ProjectPlans({
               <TechBadge key={tech.name} name={tech.name} type={tech.type} />
             ))}
           </div>
-          {status === "in-progress" && githubUrl && (
+          {(status === "in-progress" || status === "archived") && githubUrl && (
             <div className="mt-4">
               <a
                 href={githubUrl}

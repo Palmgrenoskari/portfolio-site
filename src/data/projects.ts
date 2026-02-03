@@ -2,6 +2,33 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 
 export const projects: Project[] = [
   {
+    title: "Exilius - Idle MMORPG",
+    description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilius brings the satisfying progression and skill-based gameplay of these titles into an idle format.
+
+      Train skills, gather resources, and progress your character — even while you're away. Trade with other players, join a guild and climb the leaderboards.
+
+      Not yet deployed. Some images from development below.
+
+      ETA 2026 Q3-Q4`,
+    images: [
+      "/images/exilius_preview.png",
+      "/images/exilius_preview2.png",
+      "/images/exilius_preview3.png",
+      "/images/exilius_preview4.png",
+      "/images/exilius_preview5.png",
+      "/images/exilius_preview6.png",
+    ],
+    technologies: [
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "Fastify", type: "framework" },
+      { name: "Vite", type: "tool" },
+      { name: "Zod", type: "tool" },
+      { name: "Prisma", type: "database" },
+      { name: "Cloudflare", type: "cloud" },
+    ],
+  },
+  {
     title: "Personal Portfolio Website",
     description: `A personal portfolio website built with React and Next.js.
 
@@ -19,7 +46,7 @@ export const projects: Project[] = [
     title: "Oura Analytics App (MVP)",
     description: `A web application designed for exploring and visualizing your Oura Ring data. It features dynamic graphs, easy to understand metrics, and an LLM Chat assistant for personalized guidance.
 
-      Built with Python and Streamlit.`,
+      Should revisit this idea again in the future. Current MVP is outdated and not maintained.`,
     liveUrl: "https://ouradashboard.streamlit.app",
     technologies: [
       { name: "Python", type: "language" },
@@ -31,8 +58,7 @@ export const projects: Project[] = [
 
 export const smallerProjects: SmallerProject[] = [
   {
-    title:
-      "BSc Thesis: Comparison of CNN Architectures in Fruit Recognition.",
+    title: "BSc Thesis: Comparison of CNN Architectures in Fruit Recognition.",
     description: `Trained three different CNN models on the Fruits360 dataset.
 
       Compared model performance on various subsets of the dataset based on accuracy and visual inspection of confusion matrices.
@@ -96,7 +122,8 @@ export const projectsPlanned: PlannedProject[] = [
       - Opponent Scouting
 
       GitHub has progress images for now.
-      Unfortunately can't deploy/publish without Riot Games approval. (Pending)`,
+
+      Might revisit this idea in the future.`,
     plannedTechnologies: [
       { name: "TypeScript", type: "language" },
       { name: "React", type: "framework" },
@@ -105,24 +132,24 @@ export const projectsPlanned: PlannedProject[] = [
       { name: "SQLite", type: "database" },
       { name: "Riot API", type: "tool" },
     ],
-    status: "in-progress",
+    status: "archived",
     githubUrl: "https://github.com/palmgrenoskari/league_site",
   },
   {
     title: "League of Legends Match Data Processing Pipeline",
-    description: `Need to build a pipeline that:
+    description: `A data pipeline that:
 
-      1) Crawls large amounts of League of Legends related data such as match history data for meaningful aggregates (winrate, pickrate, etc)
-      2) Extracts these aggregates from the data
-      3) Store in SQLite and eventually schedule this to run consistently.
+      1) Crawls large amounts of League of Legends match history data
+      2) Extracts meaningful aggregates (winrate, pickrate, etc.)
+      3) Stores results in SQLite
 
-      Currently bottlenecked by very low API call rate limit. (Product registration pending)`,
+      Might revisit this idea in the future.`,
     plannedTechnologies: [
       { name: "Python", type: "language" },
       { name: "SQLite", type: "database" },
       { name: "Riot API", type: "tool" },
     ],
-    status: "in-progress",
+    status: "archived",
     githubUrl: "https://github.com/palmgrenoskari/league_data",
   },
 ];

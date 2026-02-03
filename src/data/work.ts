@@ -5,17 +5,20 @@ export const workEntries: WorkEntry[] = [
     logo: "/images/digia_logo_v1.png",
     company: "Digia",
     role: "Software Robotics Developer",
-    period: "Aug 2025 - X",
-    description: `Developing Software Robotics Automations, including customer collaboration and automation maintenance responsibilities.
+    period: "Aug 2025 - Present",
+    description: `Developing software robotics automations, with hands-on involvement in customer collaboration and ongoing automation maintenance.
 
-        Begins in August 2025.`,
+Recently, I’ve also worked in AI consulting, providing insights and recommendations for AI-driven projects as well as contributing to their development.`,
     technologies: [
-      { name: "Languages", type: "language" },
-      { name: "Frameworks", type: "framework" },
-      { name: "Databases", type: "database" },
-      { name: "Tools", type: "tool" },
-      { name: "Cloud", type: "cloud" },
-      { name: "Soft Skills", type: "soft_skill" },
+      { name: "Python", type: "language" },
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "PostgreSQL", type: "database" },
+      { name: "Docker", type: "tool" },
+      { name: "Git", type: "tool" },
+      { name: "Azure", type: "cloud" },
+      { name: "AWS", type: "cloud" },
+      { name: "Consulting", type: "soft_skill" },
     ],
   },
   {
@@ -41,9 +44,9 @@ export const workEntries: WorkEntry[] = [
     logo: "/images/hesburger_transparent.png",
     company: "Hes-Pro (Finland) Oy",
     role: "Warehouse Worker",
-    period: "Jan 2020 - Present",
+    period: "Jan 2020 - Oct 2025",
     description:
-      "Physical work in Hesburger's central warehouse. Full hours during the summer (excl. 2024), 30-50h/month during studies.",
+      "Physical work in Hesburger's central warehouse. Full hours during the summer (excl. 2024), 30-60h/month during studies.",
     technologies: [
       { name: "People skills", type: "soft_skill" },
       { name: "Friendships", type: "soft_skill" },

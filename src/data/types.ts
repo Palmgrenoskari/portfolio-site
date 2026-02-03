@@ -15,7 +15,8 @@ export interface Technology {
 export interface Project {
   title: string;
   description: string;
-  liveUrl: string;
+  liveUrl?: string;
+  images?: string[];
   technologies: Technology[];
 }
 
@@ -30,7 +31,7 @@ export interface PlannedProject {
   title: string;
   description: string;
   plannedTechnologies: Technology[];
-  status: "in-progress" | "planning";
+  status: "in-progress" | "planning" | "archived";
   githubUrl: string;
 }
 

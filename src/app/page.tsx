@@ -15,13 +15,9 @@ export default function Home() {
       <br />
       <h1 className="text-4xl font-bold mb-4">Oskari Palmgren</h1>
       <p className="text-xl text-gray-300 mb-6 text-center max-w-3xl">
-        Master's student in ICT specializing in Data Analytics and Health
-        Technology.
-        <br />
-        <br />
-        Experienced in building full-stack GenAI-driven applications with Python
-        and Azure. Skilled in modern web technologies like JavaScript, React,
-        and Next.js, creating dynamic and responsive applications.
+        Full-time software developer working on software robotics and modern
+        AI-driven solutions, building useful products in close collaboration
+        with customers.
       </p>
       <div className="flex space-x-4 mb-8">
         <Link

@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       </div>
 
       <h2 className="text-2xl font-bold mb-6 text-center text-purple-400">
-        Project Pipeline
+        Project Archive
       </h2>
       <div className="mb-12">
         {projectsPlanned.map((project, index) => (

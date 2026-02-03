@@ -4,7 +4,7 @@ export const educationEntries: EducationEntry[] = [
   {
     logo: "/images/utu_logo_transparent_test.png",
     institution: "University of Turku",
-    degree: "MSc in ICT (ongoing)",
+    degree: "MSc in ICT (ongoing) 🐌",
     period: "Sep 2023 - Present",
     description:
       "Currently pursuing a Master's degree in ICT with a specialization in Data Analytics and Health Technology.",
