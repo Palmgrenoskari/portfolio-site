@@ -7,7 +7,7 @@ export const projects: Project[] = [
 
       Train skills, gather resources, and progress your character — even while you're away. Trade with other players, join a guild and climb the leaderboards.
 
-      Live: https://exiliumidle.com
+      Live alpha version: https://exiliumidle.com
 
       Feel free to register and try it out. Just keep in mind it is in very early development :)`,
     liveUrl: "https://exiliumidle.com",

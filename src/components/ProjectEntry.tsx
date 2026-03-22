@@ -21,7 +21,23 @@ export default function ProjectEntry({
     <>
       <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
         <h3 className={`text-xl font-bold mb-2`}>{title}</h3>
-        <p className="text-gray-300 mb-4 whitespace-pre-line">{description}</p>
+        <p className="text-gray-300 mb-4 whitespace-pre-line">
+          {description.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+            /^https?:\/\//.test(part) ? (
+              <a
+                key={i}
+                href={part}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                {part}
+              </a>
+            ) : (
+              part
+            )
+          )}
+        </p>
 
         {images && images.length > 0 && (
           <div className="mb-4">
