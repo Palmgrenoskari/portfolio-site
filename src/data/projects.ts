@@ -2,14 +2,15 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 
 export const projects: Project[] = [
   {
-    title: "Exilius - Idle MMORPG",
-    description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilius brings the satisfying progression and skill-based gameplay of these titles into an idle format.
+    title: "Exilium - Idle MMORPG",
+    description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilium brings the satisfying progression and strategic gameplay of these titles into an idle format.
 
       Train skills, gather resources, and progress your character — even while you're away. Trade with other players, join a guild and climb the leaderboards.
 
-      Not yet deployed. Some images from development below.
+      Live: https://exiliumidle.com
 
-      ETA 2026 Q3-Q4`,
+      Feel free to register and try it out. Just keep in mind it is in very early development :)`,
+    liveUrl: "https://exiliumidle.com",
     images: [
       "/images/exilius_preview.png",
       "/images/exilius_preview2.png",
@@ -24,6 +25,7 @@ export const projects: Project[] = [
       { name: "Fastify", type: "framework" },
       { name: "Vite", type: "tool" },
       { name: "Zod", type: "tool" },
+      { name: "PostgreSQL", type: "database" },
       { name: "Prisma", type: "database" },
       { name: "Cloudflare", type: "cloud" },
     ],
