@@ -15,32 +15,27 @@ export default function WorkEntry({
 }: WorkEntryProps) {
   return (
     <div
-      className={`
-      bg-gray-800 rounded-lg p-6 mb-6 shadow-lg 
-      transition-all duration-300 ease-in-out 
-      hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]
-      ${
-        isHypothetical
-          ? "border-2 border-dashed border-gray-600 bg-opacity-80"
-          : ""
-      }
-    `}
+      className={`bg-surface border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50 ${
+        isHypothetical ? "border-dashed border-muted" : "border-border"
+      }`}
     >
-      <div className="flex items-center mb-4">
+      <div className="flex items-center gap-4 mb-4">
         <Image
           src={logo || "/placeholder.svg"}
           alt={`${company} logo`}
-          width={64}
-          height={64}
-          className="rounded-full mr-4"
+          width={56}
+          height={56}
+          className="rounded-full bg-white/90 p-1 object-contain shrink-0"
         />
         <div>
-          <h3 className="text-xl font-bold">{company}</h3>
-          <p className="text-gray-400">{role}</p>
-          <p className="text-sm text-gray-500">{period}</p>
+          <h3 className="text-lg font-semibold">{company}</h3>
+          <p className="font-sans text-fg/80">{role}</p>
+          <p className="font-mono text-xs text-muted mt-0.5">{period}</p>
         </div>
       </div>
-      <p className="text-gray-300 mb-4 whitespace-pre-line">{description}</p>
+      <p className="font-sans text-fg/80 leading-relaxed mb-4 whitespace-pre-line">
+        {description}
+      </p>
       {technologies && (
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (

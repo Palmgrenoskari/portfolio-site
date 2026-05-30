@@ -1,24 +1,21 @@
 import { Technology } from "./types";
 
+// Curated to reflect what I actively build with — kept condensed on purpose.
+// The longer tail of tools/libraries (Vite, Zod, Railway, Cloudflare, SQLite,
+// Streamlit, R, K8s, …) lives on the Projects / About pages, in context.
 export const technologies: Technology[] = [
   { name: "Python", type: "language" },
-  { name: "JavaScript", type: "language" },
   { name: "TypeScript", type: "language" },
-  { name: "HTML5", type: "language" },
-  { name: "CSS3", type: "language" },
-  { name: "R", type: "language" },
+  { name: "JavaScript", type: "language" },
   { name: "React", type: "framework" },
   { name: "Next.js", type: "framework" },
-  { name: "Streamlit", type: "framework" },
+  { name: "Fastify", type: "framework" },
   { name: "Tailwind CSS", type: "framework" },
-  { name: "MySQL", type: "database" },
   { name: "PostgreSQL", type: "database" },
-  { name: "SQLite", type: "database" },
-  { name: "MongoDB", type: "database" },
-  { name: "Git", type: "tool" },
-  { name: "Docker", type: "tool" },
-  { name: "K8s", type: "tool" },
+  { name: "Prisma", type: "database" },
   { name: "Node.js", type: "tool" },
-  { name: "Azure", type: "cloud" },
+  { name: "Docker", type: "tool" },
+  { name: "Git", type: "tool" },
   { name: "AWS", type: "cloud" },
+  { name: "Azure", type: "cloud" },
 ];

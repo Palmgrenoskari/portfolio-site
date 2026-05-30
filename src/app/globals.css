@@ -3,17 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  /* Light — soft creamy, never pure white */
+  --bg: 236 233 226; /* #ECE9E2 */
+  --surface: 244 241 234; /* #F4F1EA */
+  --fg: 34 32 29; /* #22201D */
+  --muted: 107 101 92; /* #6B655C */
+  --border: 214 209 198; /* #D6D1C6 */
+  --accent: 47 122 64; /* #2F7A40 — darker green for contrast on cream */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dark {
+  /* Dark — warm near-black */
+  --bg: 23 24 26; /* #17181A */
+  --surface: 31 33 35; /* #1F2123 */
+  --fg: 230 227 218; /* #E6E3DA */
+  --muted: 154 149 139; /* #9A958B */
+  --border: 58 60 56; /* #3A3C38 */
+  --accent: 63 157 84; /* #3F9D54 — brighter green on dark */
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono tracking-tight;
+  }
+
+  /* Smooth the light/dark transition without animating page loads */
+  body,
+  .theme-transition * {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.25);
+  }
 }

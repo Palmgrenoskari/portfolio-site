@@ -1,25 +1,14 @@
 import { TechnologyType } from "@/data/types";
 
-const techColors: Record<TechnologyType, string> = {
-  language: "bg-blue-600",
-  framework: "bg-green-600",
-  tool: "bg-yellow-600",
-  database: "bg-purple-600",
-  cloud: "bg-red-600",
-  soft_skill: "bg-teal-600",
-  hard_skill: "bg-indigo-600",
-};
-
 interface TechBadgeProps {
   name: string;
-  type: TechnologyType;
+  // Kept for grouping/semantics; no longer drives colour.
+  type?: TechnologyType;
 }
 
-export default function TechBadge({ name, type }: TechBadgeProps) {
+export default function TechBadge({ name }: TechBadgeProps) {
   return (
-    <span
-      className={`${techColors[type]} text-white px-3 py-1 rounded-full text-sm`}
-    >
+    <span className="font-mono text-xs text-muted border border-border rounded px-2 py-0.5 hover:border-accent hover:text-accent transition-colors">
       {name}
     </span>
   );
