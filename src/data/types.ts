@@ -69,5 +69,4 @@ export interface Certification {
 export interface Route {
   href: string;
   label: string;
-  hoverColor: string;
 }

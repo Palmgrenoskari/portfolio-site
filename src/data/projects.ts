@@ -2,6 +2,28 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 
 export const projects: Project[] = [
   {
+    title: "Päivänpulma - Daily Puzzle Platform",
+    description: `A live Finnish-language daily puzzle and word-game site. Features Sanailija (a Wordle-style word game with daily and practice modes), daily Sudoku, and Kynäilijä (a drawing game), with more games on the way.
+
+      Includes user accounts (Google + email/password), guest play with localStorage history, friends lists, and per-game leaderboards. Built as a full-stack TypeScript monorepo: Next.js frontend on Vercel, Fastify API on Railway, and PostgreSQL via Prisma.
+
+      Live site: https://paivanpulma.fi
+
+      My most complete production project so far — go solve today's puzzle! 🧩`,
+    liveUrl: "https://paivanpulma.fi",
+    technologies: [
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "Next.js", type: "framework" },
+      { name: "Tailwind CSS", type: "framework" },
+      { name: "Fastify", type: "framework" },
+      { name: "PostgreSQL", type: "database" },
+      { name: "Prisma", type: "database" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
+    ],
+  },
+  {
     title: "Exilium - Idle MMORPG",
     description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilium brings the satisfying progression and strategic gameplay of these titles into an idle format.
 
@@ -48,7 +70,7 @@ export const projects: Project[] = [
     title: "Oura Analytics App (MVP)",
     description: `A web application designed for exploring and visualizing your Oura Ring data. It features dynamic graphs, easy to understand metrics, and an LLM Chat assistant for personalized guidance.
 
-      Should revisit this idea again in the future. Current MVP is outdated and not maintained.`,
+      Should revisit this idea again in the future. Current MVP is old, outdated and not maintained — maybe should throw Claude Code at it brrr... 🤖`,
     liveUrl: "https://ouradashboard.streamlit.app",
     technologies: [
       { name: "Python", type: "language" },

@@ -19,9 +19,9 @@ export default function ProjectEntry({
 
   return (
     <>
-      <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
-        <h3 className={`text-xl font-bold mb-2`}>{title}</h3>
-        <p className="text-gray-300 mb-4 whitespace-pre-line">
+      <div className="bg-surface border border-border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50">
+        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <p className="font-sans text-fg/80 leading-relaxed mb-4 whitespace-pre-line">
           {description.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
             /^https?:\/\//.test(part) ? (
               <a
@@ -29,7 +29,7 @@ export default function ProjectEntry({
                 href={part}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 underline"
+                className="text-accent hover:underline"
               >
                 {part}
               </a>
@@ -43,14 +43,14 @@ export default function ProjectEntry({
           <div className="mb-4">
             <button
               onClick={() => setIsImagesOpen(!isImagesOpen)}
-              className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+              className="flex items-center gap-2 font-mono text-sm text-accent hover:underline"
             >
               {isImagesOpen ? (
                 <ChevronUp className="w-4 h-4" />
               ) : (
                 <ChevronDown className="w-4 h-4" />
               )}
-              Images ({images.length})
+              images ({images.length})
             </button>
 
             {isImagesOpen && (
@@ -58,13 +58,14 @@ export default function ProjectEntry({
                 {images.map((img, index) => (
                   <div
                     key={index}
-                    className="relative h-32 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+                    className="relative h-32 rounded-md overflow-hidden cursor-pointer border border-border hover:opacity-80 transition-opacity"
                     onClick={() => setSelectedImage(img)}
                   >
                     <Image
                       src={img}
                       alt={`${title} preview ${index + 1}`}
                       fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
                       className="object-cover"
                     />
                   </div>
@@ -84,9 +85,9 @@ export default function ProjectEntry({
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-blue-400 hover:text-blue-300"
+            className="inline-flex items-center font-mono text-sm text-accent hover:underline"
           >
-            Visit Live Site <ExternalLink className="ml-1 w-4 h-4" />
+            visit live site <ExternalLink className="ml-1 w-4 h-4" />
           </a>
         )}
       </div>
@@ -99,6 +100,7 @@ export default function ProjectEntry({
           <button
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close image"
           >
             <X className="w-8 h-8" />
           </button>
@@ -107,6 +109,7 @@ export default function ProjectEntry({
               src={selectedImage}
               alt={`${title} full preview`}
               fill
+              sizes="100vw"
               className="object-contain"
               onClick={(e) => e.stopPropagation()}
             />

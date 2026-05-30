@@ -20,29 +20,33 @@ export default function CertificationEntry({
   description,
 }: CertificationEntryProps) {
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
-      <div className="flex items-center mb-4">
+    <div className="bg-surface border border-border rounded-lg p-5 flex flex-col h-full transition-colors hover:border-accent/50">
+      <div className="flex items-start gap-3 mb-3">
         <Image
           src={badge || "/placeholder.svg"}
           alt={`${title} badge`}
-          width={100}
-          height={100}
-          className="mr-4"
+          width={56}
+          height={56}
+          className="object-contain shrink-0"
         />
         <div>
-          <h3 className="text-xl font-bold">{title}</h3>
-          <p className="text-gray-400">Issued: {issued}</p>
-          <p className="text-gray-400">Expires: {expiration}</p>
+          <h3 className="text-base font-semibold leading-snug">{title}</h3>
+          <p className="font-mono text-xs text-muted mt-1">
+            issued {issued}
+            {expiration ? ` · expires ${expiration}` : ""}
+          </p>
         </div>
       </div>
-      <p className="text-gray-300 mb-4">{description}</p>
+      <p className="font-sans text-sm text-fg/80 leading-relaxed mb-4 grow">
+        {description}
+      </p>
       <Link
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-blue-400 hover:text-blue-300"
+        className="inline-flex items-center font-mono text-sm text-accent hover:underline"
       >
-        View Certificate <ExternalLink className="ml-1 w-4 h-4" />
+        view certificate <ExternalLink className="ml-1 w-4 h-4" />
       </Link>
     </div>
   );

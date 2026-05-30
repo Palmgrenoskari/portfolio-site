@@ -34,7 +34,7 @@ const wisePhrases = [
   },
   {
     message:
-      "If at first you don’t succeed, then skydiving definitely isn’t for you.",
+      "If at first you don't succeed, then skydiving definitely isn't for you.",
     author: "Steven Wright",
   },
   {
@@ -98,27 +98,15 @@ interface WisePhrase {
   author: string;
 }
 
-interface SpeechBubbleProps {
-  phrase: WisePhrase;
-}
-
-const SpeechBubble: React.FC<SpeechBubbleProps> = ({ phrase }) => {
+function SpeechBubble({ phrase }: { phrase: WisePhrase }) {
   return (
-    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 p-4 rounded-lg shadow-lg w-max max-w-[80vw]">
-      <div className="relative">
-        <div className="flex flex-col">
-          <span className="font-semibold whitespace-normal">
-            {phrase.message}
-          </span>
-          <span className="block text-gray-500 text-sm mt-2">
-            - {phrase.author}
-          </span>
-        </div>
-        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rotate-45"></div>
-      </div>
+    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max max-w-[80vw] sm:max-w-xs bg-surface border border-border text-fg p-3 rounded-md shadow-lg z-10">
+      <p className="font-sans text-sm leading-relaxed">{phrase.message}</p>
+      <p className="font-mono text-xs text-muted mt-2">— {phrase.author}</p>
+      <div className="absolute -bottom-[6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-surface border-b border-r border-border rotate-45" />
     </div>
   );
-};
+}
 
 export default function WiseProfilePicture() {
   const [showBubble, setShowBubble] = useState(false);
@@ -128,9 +116,7 @@ export default function WiseProfilePicture() {
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   const handleClick = () => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
+    if (timeoutId) clearTimeout(timeoutId);
 
     const randomPhrase =
       wisePhrases[Math.floor(Math.random() * wisePhrases.length)];
@@ -142,33 +128,33 @@ export default function WiseProfilePicture() {
   };
 
   return (
-    <div className="relative group">
-      <div className="relative">
+    <div className="relative inline-block">
+      {showBubble && <SpeechBubble phrase={currentPhrase} />}
+      <button
+        type="button"
+        onClick={handleClick}
+        aria-label="A wise corgi"
+        title="Ask the corgi for wisdom"
+        className="block rounded-full ring-1 ring-border hover:ring-accent transition-[box-shadow,transform] hover:scale-[1.03]"
+      >
         <Image
           src="/images/corgi.jpg"
-          alt="Profile Picture"
-          width={300}
-          height={300}
-          className="rounded-full mb-8 cursor-pointer"
-          onClick={handleClick}
+          alt="Profile"
+          width={128}
+          height={128}
+          className="rounded-full"
+          priority
         />
         <Image
           src="/images/intelligent_corgi.png"
-          alt="Intelligent Profile Picture"
-          width={300}
-          height={300}
-          className={`rounded-full mb-8 cursor-pointer absolute top-0 left-0 transition-opacity duration-1000 ${
+          alt=""
+          width={128}
+          height={128}
+          className={`rounded-full absolute top-0 left-0 transition-opacity duration-700 ${
             showBubble ? "opacity-100" : "opacity-0"
           }`}
-          onClick={handleClick}
         />
-        {!showBubble && (
-          <div className="absolute -top-1 -right-6 bg-blue-500 text-white px-3 py-1 rounded-full text-sm animate-bounce">
-            Click me!
-          </div>
-        )}
-      </div>
-      {showBubble && <SpeechBubble phrase={currentPhrase} />}
+      </button>
     </div>
   );
 }
