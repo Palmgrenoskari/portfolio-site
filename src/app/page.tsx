@@ -2,11 +2,13 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechBadge from "@/components/TechBadge";
-import WiseProfilePicture from "@/components/WiseProfilePicture";
 import { defaultStack, projects } from "@/data";
 
 const firstSentence = (text: string) =>
-  text.trim().split("\n")[0].split(/(?<=\.)\s/)[0];
+  text
+    .trim()
+    .split("\n")[0]
+    .split(/(?<=\.)\s/)[0];
 
 // Featured = the two live, current projects.
 const featured = projects.slice(0, 2);
@@ -15,47 +17,71 @@ export default function Home() {
   return (
     <div className="max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8">
       {/* Hero */}
-      <section className="flex flex-col-reverse sm:flex-row sm:items-center gap-8 mb-16">
-        <div className="flex-1">
-          <p className="font-mono text-sm text-accent">// software developer</p>
-          <h1 className="text-4xl sm:text-5xl font-bold mt-2">
-            Oskari Palmgren
-          </h1>
-          <p className="font-sans text-fg/80 leading-relaxed mt-4 max-w-xl">
+      <section className="mb-16">
+        <p className="font-mono text-sm text-accent">// software developer</p>
+        <h1 className="text-4xl sm:text-5xl font-bold mt-2">Oskari Palmgren</h1>
+        <div className="font-sans text-fg/80 leading-relaxed mt-4 max-w-xl space-y-3">
+          <p>
             Full-time developer working on software robotics and modern
-            AI-driven solutions, building useful products in close
-            collaboration with customers. I also build small things on the side.
+            AI-driven solutions, building useful products in close collaboration
+            with customers.
           </p>
-
-          <p className="font-mono text-sm text-muted mt-5">
-            <span className="text-accent">$</span> currently building &rarr;{" "}
-            Päivänpulma · Exilium
+          <p>
+            Recently my work has mainly revolved around data retrieval
+            tooling/MCPs for LLMs (RAG, Text2SQL, ...).
           </p>
-
-          <div className="flex items-center gap-4 mt-6">
-            <Link
-              href="https://github.com/palmgrenoskari"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-2xl text-muted hover:text-accent transition-colors"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href="https://linkedin.com/in/osgren"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-2xl text-muted hover:text-accent transition-colors"
-            >
-              <FaLinkedin />
-            </Link>
-          </div>
+          <p>Varying hobby projects on the side :)</p>
         </div>
 
-        <div className="shrink-0 self-center sm:self-auto">
-          <WiseProfilePicture />
+        <div className="font-mono text-sm text-muted mt-5">
+          <p>
+            <span className="text-accent">$</span> currently building
+          </p>
+          <ul className="mt-1.5 space-y-1 pl-4">
+            <li>
+              <span className="text-accent">&rarr;</span>{" "}
+              <a
+                href="https://paivanpulma.fi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-fg/90 hover:text-accent hover:underline transition-colors"
+              >
+                Päivänpulma.fi
+              </a>
+            </li>
+            <li>
+              <span className="text-accent">&rarr;</span>{" "}
+              <a
+                href="https://exilium.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-fg/90 hover:text-accent hover:underline transition-colors"
+              >
+                Exilium.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex items-center gap-4 mt-6">
+          <Link
+            href="https://github.com/palmgrenoskari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-2xl text-muted hover:text-accent transition-colors"
+          >
+            <FaGithub />
+          </Link>
+          <Link
+            href="https://linkedin.com/in/osgren"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-2xl text-muted hover:text-accent transition-colors"
+          >
+            <FaLinkedin />
+          </Link>
         </div>
       </section>
 
@@ -86,8 +112,12 @@ export default function Home() {
                 {firstSentence(project.description)}.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {project.technologies.slice(0, 4).map((tech) => (
-                  <TechBadge key={tech.name} name={tech.name} type={tech.type} />
+                {project.technologies.slice(0, 10).map((tech) => (
+                  <TechBadge
+                    key={tech.name}
+                    name={tech.name}
+                    type={tech.type}
+                  />
                 ))}
               </div>
               {project.liveUrl && (
@@ -108,7 +138,7 @@ export default function Home() {
       {/* Default stack — short and opinionated; full detail lives in projects */}
       <section className="mb-16">
         <p className="font-mono text-sm text-accent mb-4">
-          // the stack I reach for by default
+          // default go-to stack
         </p>
         <div className="border-l-2 border-accent pl-4 space-y-1.5 font-mono text-sm">
           {defaultStack.map((group) => (

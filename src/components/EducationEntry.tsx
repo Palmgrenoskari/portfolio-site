@@ -14,6 +14,7 @@ export default function EducationEntry({
   thesis,
   gpa,
   technologies,
+  invertInLight,
 }: EducationEntryProps) {
   return (
     <div className="bg-surface border border-border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50">
@@ -23,7 +24,9 @@ export default function EducationEntry({
           alt={`${institution} logo`}
           width={56}
           height={56}
-          className="rounded-full bg-white/90 p-1 object-contain shrink-0"
+          className={`object-contain shrink-0 ${
+            invertInLight ? "invert dark:invert-0" : ""
+          }`}
         />
         <div>
           <h3 className="text-lg font-semibold">{institution}</h3>

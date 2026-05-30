@@ -2,7 +2,6 @@
 
 import type React from "react";
 import { useState } from "react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function ClickableLogo() {
@@ -19,14 +18,7 @@ export default function ClickableLogo() {
   };
 
   return (
-    <div className="relative flex items-center gap-2" onClick={handleClick}>
-      <Image
-        src="/images/corgi.jpg"
-        alt=""
-        width={32}
-        height={32}
-        className="rounded-full ring-1 ring-border"
-      />
+    <div className="relative flex items-center" onClick={handleClick}>
       <span className="font-mono font-semibold tracking-tight text-base">
         <span className="text-accent">~</span>/oskari
       </span>

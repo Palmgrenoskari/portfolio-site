@@ -45,6 +45,8 @@ export interface EducationEntry {
   thesis?: string;
   gpa?: number;
   technologies: Technology[];
+  /** Invert the logo in light mode (for white/transparent logos). */
+  invertInLight?: boolean;
 }
 
 export interface WorkEntry {
