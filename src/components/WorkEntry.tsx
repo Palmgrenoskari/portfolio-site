@@ -25,7 +25,7 @@ export default function WorkEntry({
           alt={`${company} logo`}
           width={56}
           height={56}
-          className="rounded-full bg-white/90 p-1 object-contain shrink-0"
+          className="object-contain shrink-0"
         />
         <div>
           <h3 className="text-lg font-semibold">{company}</h3>

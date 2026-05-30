@@ -30,14 +30,16 @@ export const metadata: Metadata = {
   },
 };
 
-// Runs before first paint to apply the saved/system theme and avoid a flash.
+// Runs before first paint to apply the saved theme and avoid a flash.
+// Defaults to dark unless the user has explicitly chosen light.
 const themeScript = `
 (function () {
   try {
-    var t = localStorage.getItem('theme');
-    var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var dark = localStorage.getItem('theme') !== 'light';
     if (dark) document.documentElement.classList.add('dark');
-  } catch (e) {}
+  } catch (e) {
+    document.documentElement.classList.add('dark');
+  }
 })();
 `;
 

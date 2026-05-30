@@ -9,4 +9,10 @@ export const defaultStack: { label: string; items: string[] }[] = [
   { label: "build", items: ["React", "Next.js", "Fastify"] },
   { label: "data", items: ["PostgreSQL", "Prisma"] },
   { label: "ship", items: ["Vercel", "Railway", "Docker", "AWS", "Azure"] },
+  {
+    label: "ai",
+    items: [
+      "Claude Code / Codex with the most recent well-received skills/plugins",
+    ],
+  },
 ];

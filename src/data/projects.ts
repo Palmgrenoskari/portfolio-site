@@ -3,13 +3,13 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 export const projects: Project[] = [
   {
     title: "Päivänpulma - Daily Puzzle Platform",
-    description: `A live Finnish-language daily puzzle and word-game site. Features Sanailija (a Wordle-style word game with daily and practice modes), daily Sudoku, and Kynäilijä (a drawing game), with more games on the way.
+    description: `A live Finnish-language daily puzzle and word-game site. Features games such as Wordle, Crosswords, Sudoku. More to come!
 
-      Includes user accounts (Google + email/password), guest play with localStorage history, friends lists, and per-game leaderboards. Built as a full-stack TypeScript monorepo: Next.js frontend on Vercel, Fastify API on Railway, and PostgreSQL via Prisma.
+      Includes user accounts (Google + email/password), guest play with localStorage history, friends lists, and per-game leaderboards.
 
       Live site: https://paivanpulma.fi
-
-      My most complete production project so far — go solve today's puzzle! 🧩`,
+      
+      Try it out :)!`,
     liveUrl: "https://paivanpulma.fi",
     technologies: [
       { name: "TypeScript", type: "language" },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
 
       Live alpha version: https://exiliumidle.com
 
-      Feel free to register and try it out. Just keep in mind it is in very early development :)`,
+      Feel free to register and try it out.`,
     liveUrl: "https://exiliumidle.com",
     images: [
       "/images/exilius_preview.png",
@@ -50,6 +50,8 @@ export const projects: Project[] = [
       { name: "PostgreSQL", type: "database" },
       { name: "Prisma", type: "database" },
       { name: "Cloudflare", type: "cloud" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
     ],
   },
   {
@@ -63,7 +65,7 @@ export const projects: Project[] = [
       { name: "React", type: "framework" },
       { name: "Next.js", type: "framework" },
       { name: "Tailwind CSS", type: "framework" },
-      { name: "Node.js", type: "tool" },
+      { name: "Vercel", type: "cloud" },
     ],
   },
   {
