@@ -3,24 +3,13 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TechBadge from "@/components/TechBadge";
 import WiseProfilePicture from "@/components/WiseProfilePicture";
-import { technologies, projects } from "@/data";
-import { Technology, TechnologyType } from "@/data/types";
+import { defaultStack, projects } from "@/data";
 
 const firstSentence = (text: string) =>
   text.trim().split("\n")[0].split(/(?<=\.)\s/)[0];
 
 // Featured = the two live, current projects.
 const featured = projects.slice(0, 2);
-
-const skillGroups: { label: string; types: TechnologyType[] }[] = [
-  { label: "languages", types: ["language"] },
-  { label: "frameworks", types: ["framework"] },
-  { label: "data", types: ["database"] },
-  { label: "tools & cloud", types: ["tool", "cloud"] },
-];
-
-const techByGroup = (types: TechnologyType[]): Technology[] =>
-  technologies.filter((t) => types.includes(t.type));
 
 export default function Home() {
   return (
@@ -116,25 +105,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* Default stack — short and opinionated; full detail lives in projects */}
       <section className="mb-16">
-        <h2 className="font-mono text-xl mb-6">
-          <span className="text-accent">##</span> stack
-        </h2>
-        <div className="space-y-4">
-          {skillGroups.map((group) => (
-            <div
-              key={group.label}
-              className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
-            >
-              <span className="font-mono text-xs text-muted w-28 shrink-0">
-                {group.label}
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {techByGroup(group.types).map((tech) => (
-                  <TechBadge key={tech.name} name={tech.name} type={tech.type} />
-                ))}
-              </div>
+        <p className="font-mono text-sm text-accent mb-4">
+          // the stack I reach for by default
+        </p>
+        <div className="border-l-2 border-accent pl-4 space-y-1.5 font-mono text-sm">
+          {defaultStack.map((group) => (
+            <div key={group.label} className="flex gap-3">
+              <span className="text-muted w-12 shrink-0">{group.label}</span>
+              <span className="text-fg/90">{group.items.join(" · ")}</span>
             </div>
           ))}
         </div>
