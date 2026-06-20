@@ -52,12 +52,12 @@ export default function Home() {
             <li>
               <span className="text-accent">&rarr;</span>{" "}
               <a
-                href="https://exilium.com"
+                href="https://exiliumidle.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-fg/90 hover:text-accent hover:underline transition-colors"
               >
-                Exilium.com
+                Exiliumidle.com
               </a>
             </li>
           </ul>
