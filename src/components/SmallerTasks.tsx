@@ -16,22 +16,22 @@ export default function SmallerTasks({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-750 hover:scale-[1.02]">
+    <div className="bg-surface border border-border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50">
       <div
-        className="flex justify-between items-center cursor-pointer"
+        className="flex justify-between items-center gap-4 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-lg font-semibold">{title}</h3>
         {isExpanded ? (
-          <ChevronUp className="w-6 h-6 text-gray-400" />
+          <ChevronUp className="w-5 h-5 text-muted shrink-0" />
         ) : (
-          <ChevronDown className="w-6 h-6 text-gray-400" />
+          <ChevronDown className="w-5 h-5 text-muted shrink-0" />
         )}
       </div>
 
       {isExpanded ? (
         <div className="mt-4">
-          <p className="text-gray-300 mb-4 whitespace-pre-line">
+          <p className="font-sans text-fg/80 leading-relaxed mb-4 whitespace-pre-line">
             {description}
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -44,20 +44,18 @@ export default function SmallerTasks({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-blue-400 hover:text-blue-300"
+              className="inline-flex items-center font-mono text-sm text-accent hover:underline"
             >
-              View on GitHub
-              <Github className="w-5 h-5 ml-1" />
+              view on github
+              <Github className="w-4 h-4 ml-1" />
             </a>
           )}
         </div>
       ) : (
-        <div className="mt-4">
-          <div className="flex flex-wrap gap-2">
-            {technologies.map((tech) => (
-              <TechBadge key={tech.name} name={tech.name} type={tech.type} />
-            ))}
-          </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <TechBadge key={tech.name} name={tech.name} type={tech.type} />
+          ))}
         </div>
       )}
     </div>

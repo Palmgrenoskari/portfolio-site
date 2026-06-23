@@ -3,6 +3,7 @@ import { EducationEntry } from "./types";
 export const educationEntries: EducationEntry[] = [
   {
     logo: "/images/utu_logo_transparent_test.png",
+    invertInLight: true,
     institution: "University of Turku",
     degree: "MSc in ICT (ongoing) 🐌🐌🐌",
     period: "Sep 2023 - Present",
@@ -22,6 +23,7 @@ export const educationEntries: EducationEntry[] = [
   },
   {
     logo: "/images/utu_logo_transparent_test.png",
+    invertInLight: true,
     institution: "University of Turku",
     degree: "Bachelor of Technology (ICT)",
     period: "Sep 2020 - Dec 2024",

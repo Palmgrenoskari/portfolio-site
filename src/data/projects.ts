@@ -2,6 +2,28 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 
 export const projects: Project[] = [
   {
+    title: "Päivänpulma - Daily Puzzle Platform",
+    description: `A live Finnish-language daily puzzle and word-game site. Features games such as Wordle, Crosswords, Sudoku. More to come!
+
+      Includes user accounts (Google + email/password), guest play with localStorage history, friends lists, and per-game leaderboards.
+
+      Live site: https://paivanpulma.fi
+      
+      Try it out :)!`,
+    liveUrl: "https://paivanpulma.fi",
+    technologies: [
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "Next.js", type: "framework" },
+      { name: "Tailwind CSS", type: "framework" },
+      { name: "Fastify", type: "framework" },
+      { name: "PostgreSQL", type: "database" },
+      { name: "Prisma", type: "database" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
+    ],
+  },
+  {
     title: "Exilium - Idle MMORPG",
     description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilium brings the satisfying progression and strategic gameplay of these titles into an idle format.
 
@@ -9,7 +31,7 @@ export const projects: Project[] = [
 
       Live alpha version: https://exiliumidle.com
 
-      Feel free to register and try it out. Just keep in mind it is in very early development :)`,
+      Feel free to register and try it out.`,
     liveUrl: "https://exiliumidle.com",
     images: [
       "/images/exilius_preview.png",
@@ -28,6 +50,8 @@ export const projects: Project[] = [
       { name: "PostgreSQL", type: "database" },
       { name: "Prisma", type: "database" },
       { name: "Cloudflare", type: "cloud" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
     ],
   },
   {
@@ -41,14 +65,14 @@ export const projects: Project[] = [
       { name: "React", type: "framework" },
       { name: "Next.js", type: "framework" },
       { name: "Tailwind CSS", type: "framework" },
-      { name: "Node.js", type: "tool" },
+      { name: "Vercel", type: "cloud" },
     ],
   },
   {
     title: "Oura Analytics App (MVP)",
     description: `A web application designed for exploring and visualizing your Oura Ring data. It features dynamic graphs, easy to understand metrics, and an LLM Chat assistant for personalized guidance.
 
-      Should revisit this idea again in the future. Current MVP is outdated and not maintained.`,
+      Should revisit this idea again in the future. Current MVP is old, outdated and not maintained — maybe should throw Claude Code at it brrr... 🤖`,
     liveUrl: "https://ouradashboard.streamlit.app",
     technologies: [
       { name: "Python", type: "language" },

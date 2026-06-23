@@ -1,24 +1,18 @@
-import { Technology } from "./types";
-
-export const technologies: Technology[] = [
-  { name: "Python", type: "language" },
-  { name: "JavaScript", type: "language" },
-  { name: "TypeScript", type: "language" },
-  { name: "HTML5", type: "language" },
-  { name: "CSS3", type: "language" },
-  { name: "R", type: "language" },
-  { name: "React", type: "framework" },
-  { name: "Next.js", type: "framework" },
-  { name: "Streamlit", type: "framework" },
-  { name: "Tailwind CSS", type: "framework" },
-  { name: "MySQL", type: "database" },
-  { name: "PostgreSQL", type: "database" },
-  { name: "SQLite", type: "database" },
-  { name: "MongoDB", type: "database" },
-  { name: "Git", type: "tool" },
-  { name: "Docker", type: "tool" },
-  { name: "K8s", type: "tool" },
-  { name: "Node.js", type: "tool" },
-  { name: "Azure", type: "cloud" },
-  { name: "AWS", type: "cloud" },
+// Intentionally short and opinionated — "the stack I reach for", not an
+// inventory. The full tech detail lives on each project (in context), so there's
+// nothing to second-guess here. Grouped by purpose.
+export const defaultStack: { label: string; items: string[] }[] = [
+  {
+    label: "lang",
+    items: ["TypeScript (Web)", "Python (AI/Automation/Analytics)"],
+  },
+  { label: "build", items: ["React", "Next.js", "Fastify"] },
+  { label: "data", items: ["PostgreSQL", "Prisma"] },
+  { label: "ship", items: ["Vercel", "Railway", "Docker", "AWS", "Azure"] },
+  {
+    label: "ai",
+    items: [
+      "Claude Code / Codex with the most recent well-received skills/plugins",
+    ],
+  },
 ];
