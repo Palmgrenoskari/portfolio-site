@@ -3,12 +3,14 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 export const projects: Project[] = [
   {
     title: "Päivänpulma - Daily Puzzle Platform",
-    description: `A live Finnish-language daily puzzle and word-game site. Features games such as Wordle, Crosswords, Sudoku. More to come!
+    description: `A live Finnish-language daily puzzle platform with a fresh set of puzzles every day. Nine games (and counting) spanning word, math and logic, inspired by globally loved formats like Wordle, Connections and Nerdle — alongside a few originals of its own.
 
-      Includes user accounts (Google + email/password), guest play with localStorage history, friends lists, and per-game leaderboards.
+      Much of the daily content is generated automatically: a nightly crawler pulls fresh words and sentences from Finnish news (Yle, Iltalehti, Ilta-Sanomat), and LLMs help turn them into crosswords, word-grouping puzzles and cryptograms — keeping the puzzles tied to current events.
+
+      User accounts (Google + email/password), guest play with history, friends lists, per-game leaderboards, daily streaks and shareable results, all on a mobile-first UI.
 
       Live site: https://paivanpulma.fi
-      
+
       Try it out :)!`,
     liveUrl: "https://paivanpulma.fi",
     technologies: [
@@ -19,6 +21,7 @@ export const projects: Project[] = [
       { name: "Fastify", type: "framework" },
       { name: "PostgreSQL", type: "database" },
       { name: "Prisma", type: "database" },
+      { name: "Google Gemini", type: "tool" },
       { name: "Vercel", type: "cloud" },
       { name: "Railway", type: "cloud" },
     ],
@@ -160,22 +163,5 @@ export const projectsPlanned: PlannedProject[] = [
     ],
     status: "archived",
     githubUrl: "https://github.com/palmgrenoskari/league_site",
-  },
-  {
-    title: "League of Legends Match Data Processing Pipeline",
-    description: `A data pipeline that:
-
-      1) Crawls large amounts of League of Legends match history data
-      2) Extracts meaningful aggregates (winrate, pickrate, etc.)
-      3) Stores results in SQLite
-
-      Might revisit this idea in the future.`,
-    plannedTechnologies: [
-      { name: "Python", type: "language" },
-      { name: "SQLite", type: "database" },
-      { name: "Riot API", type: "tool" },
-    ],
-    status: "archived",
-    githubUrl: "https://github.com/palmgrenoskari/league_data",
   },
 ];
