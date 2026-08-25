@@ -3,7 +3,7 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 export const projects: Project[] = [
   {
     title: "Exilium - Browser Idle RPG",
-    description: `A free browser-based idle RPG in public alpha, inspired by Melvor Idle and classic MMORPGs. Train 12 skills, shape your build across five mastery trees, auto-battle nearly 90 monsters over 11 regions, chase six-rarity loot and 65 handcrafted uniques, and trade on a player-run order-book marketplace — all of it keeps progressing while the tab is closed.
+    description: `A free browser-based idle MMORPG, classic MMORPG experience packaged into idle genre. Train 12 skills, shape your build across five mastery trees, auto-battle nearly 90 monsters over 11 regions, chase six-rarity loot and 65 handcrafted uniques, and trade on a player-run order-book marketplace — all of it keeps progressing while the tab is closed.
 
       Under the hood the game is server-authoritative: a Fastify + Prisma backend owns all progression and re-simulates every tick with a deterministic seeded RNG, while the React client runs a mirrored predictor engine kept byte-identical to the server by a dedicated parity test suite. Also includes an action queue, real-time farming timers, leaderboards, quests, achievements, in-game chat and a custom pixel-art asset pipeline.
 
