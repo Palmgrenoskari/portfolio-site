@@ -41,23 +41,23 @@ export default function Home() {
             <li>
               <span className="text-accent">&rarr;</span>{" "}
               <a
-                href="https://paivanpulma.fi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg/90 hover:text-accent hover:underline transition-colors"
-              >
-                Päivänpulma.fi
-              </a>
-            </li>
-            <li>
-              <span className="text-accent">&rarr;</span>{" "}
-              <a
                 href="https://exiliumidle.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-fg/90 hover:text-accent hover:underline transition-colors"
               >
                 Exiliumidle.com
+              </a>
+            </li>
+            <li>
+              <span className="text-accent">&rarr;</span>{" "}
+              <a
+                href="https://paivanpulma.fi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-fg/90 hover:text-accent hover:underline transition-colors"
+              >
+                Päivänpulma.fi
               </a>
             </li>
           </ul>

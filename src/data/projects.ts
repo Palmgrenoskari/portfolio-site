@@ -2,12 +2,36 @@ import { Project, SmallerProject, PlannedProject } from "./types";
 
 export const projects: Project[] = [
   {
+    title: "Exilium - Browser Idle RPG",
+    description: `A free browser-based idle RPG in public alpha, inspired by Melvor Idle and classic MMORPGs. Train 12 skills, shape your build across five mastery trees, auto-battle nearly 90 monsters over 11 regions, chase six-rarity loot and 65 handcrafted uniques, and trade on a player-run order-book marketplace — all of it keeps progressing while the tab is closed.
+
+      Under the hood the game is server-authoritative: a Fastify + Prisma backend owns all progression and re-simulates every tick with a deterministic seeded RNG, while the React client runs a mirrored predictor engine kept byte-identical to the server by a dedicated parity test suite. Also includes an action queue, real-time farming timers, leaderboards, quests, achievements, in-game chat and a custom pixel-art asset pipeline.
+
+      Live: https://exiliumidle.com
+
+      Feel free to register and try it out.`,
+    liveUrl: "https://exiliumidle.com",
+    technologies: [
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "Fastify", type: "framework" },
+      { name: "Tailwind CSS", type: "framework" },
+      { name: "Zustand", type: "tool" },
+      { name: "Vite", type: "tool" },
+      { name: "Vitest", type: "tool" },
+      { name: "PostgreSQL", type: "database" },
+      { name: "Prisma", type: "database" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
+    ],
+  },
+  {
     title: "Päivänpulma - Daily Puzzle Platform",
-    description: `A live Finnish-language daily puzzle platform with a fresh set of puzzles every day. Nine games (and counting) spanning word, math and logic, inspired by globally loved formats like Wordle, Connections and Nerdle — alongside a few originals of its own.
+    description: `A live Finnish-language daily puzzle and brain-training platform with 28 games across six skill areas — word, logic, math, memory, speed and agility. Twelve games get a fresh deterministic puzzle every morning, the whole catalogue is playable in free-play mode, and a persistent per-game ELO skill system (Taito) turns your rating into the difficulty, rolled up into ranks from Pronssi to Haastaja.
 
-      Much of the daily content is generated automatically: a nightly crawler pulls fresh words and sentences from Finnish news (Yle, Iltalehti, Ilta-Sanomat), and LLMs help turn them into crosswords, word-grouping puzzles and cryptograms — keeping the puzzles tied to current events.
+      Much of the daily content is generated automatically: a nightly crawler pulls fresh words from Finnish news (Yle, Iltalehti, Ilta-Sanomat) and Gemini turns them into crosswords, word-grouping puzzles and clues — keeping the puzzles tied to current events.
 
-      User accounts (Google + email/password), guest play with history, friends lists, per-game leaderboards, daily streaks and shareable results, all on a mobile-first UI.
+      User accounts (Google + email), guest play that carries over on registration, friends, per-room leaderboards, a daily championship mode, a browsable archive of past puzzles, streaks and shareable results, all on a mobile-first, ad-free UI.
 
       Live site: https://paivanpulma.fi
 
@@ -22,37 +46,7 @@ export const projects: Project[] = [
       { name: "PostgreSQL", type: "database" },
       { name: "Prisma", type: "database" },
       { name: "Google Gemini", type: "tool" },
-      { name: "Vercel", type: "cloud" },
-      { name: "Railway", type: "cloud" },
-    ],
-  },
-  {
-    title: "Exilium - Idle MMORPG",
-    description: `An online idle MMORPG currently in development. Inspired by classic MMORPGs like RuneScape and World of Warcraft, Exilium brings the satisfying progression and strategic gameplay of these titles into an idle format.
-
-      Train skills, gather resources, and progress your character — even while you're away. Trade with other players, join a guild and climb the leaderboards.
-
-      Live alpha version: https://exiliumidle.com
-
-      Feel free to register and try it out.`,
-    liveUrl: "https://exiliumidle.com",
-    images: [
-      "/images/exilius_preview.png",
-      "/images/exilius_preview2.png",
-      "/images/exilius_preview3.png",
-      "/images/exilius_preview4.png",
-      "/images/exilius_preview5.png",
-      "/images/exilius_preview6.png",
-    ],
-    technologies: [
-      { name: "TypeScript", type: "language" },
-      { name: "React", type: "framework" },
-      { name: "Fastify", type: "framework" },
-      { name: "Vite", type: "tool" },
-      { name: "Zod", type: "tool" },
-      { name: "PostgreSQL", type: "database" },
-      { name: "Prisma", type: "database" },
-      { name: "Cloudflare", type: "cloud" },
+      { name: "Turborepo", type: "tool" },
       { name: "Vercel", type: "cloud" },
       { name: "Railway", type: "cloud" },
     ],
