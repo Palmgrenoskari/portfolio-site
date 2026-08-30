@@ -12,8 +12,6 @@ export interface Technology {
   type: TechnologyType;
 }
 
-export type PlateStyle = "stone" | "cream";
-
 // String keys only: Project crosses the server->client boundary, so no component refs.
 export type FeatureIcon =
   | "swords"
@@ -40,7 +38,10 @@ export interface ProjectShowcase {
   features: { icon: FeatureIcon; text: string }[];
   /** Technical paragraph, collapsed by default. */
   underTheHood: string;
-  plate: PlateStyle;
+  /** Render art with nearest-neighbour scaling (pixel-art sprites). */
+  pixelated?: boolean;
+  /** Keep art tiles on a light paper background in both themes. */
+  lightTiles?: boolean;
   /** With `background`, tiles are overlaid on the image; without, they form a mosaic. */
   hero: { background?: string; tiles: ShowcaseTile[] };
   /** Art row on the projects page. */

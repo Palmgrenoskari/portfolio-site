@@ -6,7 +6,6 @@ import ArtStrip from "./ArtStrip";
 import FeatureList from "./FeatureList";
 import StatLine from "./StatLine";
 import UnderTheHood from "./UnderTheHood";
-import { PLATE } from "./plates";
 
 type ProjectShowcaseProps = Project & { showcase: Showcase };
 
@@ -20,10 +19,7 @@ export default function ProjectShowcase({
   const shortTitle = title.split(" - ")[0];
 
   return (
-    <div
-      style={PLATE[showcase.plate].vars}
-      className="bg-surface text-fg border border-border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50"
-    >
+    <div className="bg-surface border border-border rounded-lg p-6 mb-6 transition-colors hover:border-accent/50">
       <h3 className="text-xl font-semibold flex items-center gap-2.5">
         <BrandMark
           logo={showcase.logo}
@@ -35,7 +31,12 @@ export default function ProjectShowcase({
       </h3>
       <p className="font-sans text-fg/85 leading-relaxed mt-2">{showcase.hook}</p>
 
-      <ArtStrip tiles={showcase.strip} plate={showcase.plate} className="mt-4" />
+      <ArtStrip
+        tiles={showcase.strip}
+        pixelated={showcase.pixelated}
+        lightTiles={showcase.lightTiles}
+        className="mt-4"
+      />
 
       <FeatureList features={showcase.features} className="mt-5" />
       <StatLine stats={showcase.stats} className="mt-4" />

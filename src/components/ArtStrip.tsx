@@ -1,19 +1,29 @@
 import Image from "next/image";
-import { PlateStyle, ShowcaseTile } from "@/data/types";
-import { PLATE } from "./plates";
+import { ShowcaseTile } from "@/data/types";
 
 interface ArtTileProps {
   tile: ShowcaseTile;
-  plate: PlateStyle;
+  /** Nearest-neighbour scaling for pixel-art sprites. */
+  pixelated?: boolean;
+  /** Light paper background in both themes (for art drawn for a light UI). */
+  lightTiles?: boolean;
   /** Fixed pixel size; when omitted the tile fills its grid cell. */
   size?: number;
 }
 
-export function ArtTile({ tile, plate, size }: ArtTileProps) {
-  const p = PLATE[plate];
+export function ArtTile({
+  tile,
+  pixelated = false,
+  lightTiles = false,
+  size,
+}: ArtTileProps) {
   return (
     <div
-      className={`${p.tile} relative rounded-[6px] overflow-hidden shrink-0 ${
+      className={`${
+        lightTiles
+          ? "bg-[#faf7f2] p-1"
+          : "bg-surface ring-1 ring-border"
+      } relative rounded-[6px] overflow-hidden shrink-0 ${
         size ? "" : "w-full aspect-square"
       }`}
       style={size ? { width: size, height: size } : undefined}
@@ -24,7 +34,7 @@ export function ArtTile({ tile, plate, size }: ArtTileProps) {
         width={size ?? 64}
         height={size ?? 64}
         className={`object-contain w-full h-full ${
-          p.pixelated ? "[image-rendering:pixelated]" : ""
+          pixelated ? "[image-rendering:pixelated]" : ""
         }`}
       />
     </div>
@@ -33,22 +43,33 @@ export function ArtTile({ tile, plate, size }: ArtTileProps) {
 
 interface ArtStripProps {
   tiles: ShowcaseTile[];
-  plate: PlateStyle;
+  pixelated?: boolean;
+  lightTiles?: boolean;
   className?: string;
 }
 
 /** Ten tiles: one row on ≥sm, two full rows of five on mobile. */
 export default function ArtStrip({
   tiles,
-  plate,
+  pixelated,
+  lightTiles,
   className = "",
 }: ArtStripProps) {
   return (
     <div
-      className={`${PLATE[plate].wrap} ring-1 ring-border rounded-md px-3 py-2 grid grid-cols-5 sm:grid-cols-10 gap-2 ${className}`}
+      className={`${
+        lightTiles
+          ? "bg-bg ring-1 ring-border px-2 py-1.5 gap-1.5"
+          : "bg-bg ring-1 ring-border px-3 py-2 gap-2"
+      } rounded-md grid grid-cols-5 sm:grid-cols-10 ${className}`}
     >
       {tiles.map((tile) => (
-        <ArtTile key={tile.src} tile={tile} plate={plate} />
+        <ArtTile
+          key={tile.src}
+          tile={tile}
+          pixelated={pixelated}
+          lightTiles={lightTiles}
+        />
       ))}
     </div>
   );

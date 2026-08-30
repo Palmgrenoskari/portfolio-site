@@ -56,7 +56,7 @@ export const projects: Project[] = [
       ],
       underTheHood:
         "Server-authoritative: a Fastify + Prisma backend owns all progression and re-simulates every tick with a deterministic seeded RNG. The React client runs a mirrored predictor engine kept byte-identical to the server by a dedicated parity test suite. Also: an action queue, real-time farming timers, leaderboards, quests, achievements, in-game chat and a custom pixel-art asset pipeline.",
-      plate: "stone",
+      pixelated: true,
       hero: {
         background: `${EX}/map.webp`,
         tiles: [],
@@ -125,16 +125,16 @@ export const projects: Project[] = [
       ],
       underTheHood:
         "A nightly crawler pulls fresh words from Yle, Iltalehti and Ilta-Sanomat; Gemini turns them into crosswords, grouping puzzles and clues, so the dailies track current events. Turborepo monorepo: a Next.js web app and a Fastify + Prisma API on PostgreSQL. Accounts via Google or email, guest progress carries over on registration, a full archive of past puzzles — mobile-first and ad-free.",
-      plate: "cream",
+      lightTiles: true,
       hero: {
         tiles: [
-          game("sanailija"),
+          game("elementit"),
           game("ristikko"),
           game("sudoku"),
           game("naapurit"),
           game("matikkasade"),
           game("valkky"),
-          game("luokittelija"),
+          game("neuroverkko"),
           game("suunta"),
         ],
       },

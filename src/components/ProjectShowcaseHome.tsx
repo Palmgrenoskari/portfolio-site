@@ -3,7 +3,6 @@ import { Project, ProjectShowcase } from "@/data/types";
 import BrandMark from "./BrandMark";
 import ShowcaseHero from "./ShowcaseHero";
 import StatLine from "./StatLine";
-import { PLATE } from "./plates";
 
 interface ProjectShowcaseHomeProps {
   project: Project & { showcase: ProjectShowcase };
@@ -17,13 +16,11 @@ export default function ProjectShowcaseHome({
   const shortTitle = title.split(" - ")[0];
 
   return (
-    <div
-      style={PLATE[showcase.plate].vars}
-      className="bg-surface text-fg border border-border rounded-lg overflow-hidden flex flex-col transition-colors hover:border-accent/50"
-    >
+    <div className="bg-surface border border-border rounded-lg overflow-hidden flex flex-col transition-colors hover:border-accent/50">
       <ShowcaseHero
         hero={showcase.hero}
-        plate={showcase.plate}
+        pixelated={showcase.pixelated}
+        lightTiles={showcase.lightTiles}
         title={shortTitle}
       />
       <div className="p-5 flex flex-col grow">
