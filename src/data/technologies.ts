@@ -12,7 +12,7 @@ export const defaultStack: { label: string; items: string[] }[] = [
   {
     label: "ai",
     items: [
-      "Claude Code / Codex with the most recent well-received skills/plugins",
+      "Claude Code / Codex with the most well-received skills/MCPs",
     ],
   },
 ];

@@ -6,9 +6,9 @@ export const workEntries: WorkEntry[] = [
     company: "Digia",
     role: "Software Robotics Developer",
     period: "Aug 2025 - Present",
-    description: `Developing software robotics automations, with hands-on involvement in customer collaboration and ongoing automation maintenance.
+    description: `Software robotics and modern AI-driven solutions, building useful products in close collaboration with customers.
 
-Recently, I’ve also worked in AI consulting, providing insights and recommendations for AI-driven projects as well as contributing to their development.`,
+Currently primarily working with data-retrieval tooling for LLMs (RAG, Text2SQL, Ingestion pipelines from various source systems), agentic loops and MCP.`,
     technologies: [
       { name: "Python", type: "language" },
       { name: "TypeScript", type: "language" },
@@ -26,9 +26,9 @@ Recently, I’ve also worked in AI consulting, providing insights and recommenda
     company: "Telia Finland",
     role: "IA Developer Trainee",
     period: "May 2024 - Aug 2024",
-    description: `Developed Full-Stack GenAI Applications for various internal-use intelligent automation projects. My role spanned the entire lifecycle of application development, from initial project setup to deployment.
+    description: `Developed applications for various internal-use intelligent automation projects. Mostly LLM/RAG solutions.
 
-        Occasionally, I also got the chance to act as a bridge of communication between developers and business people, facilitating clear jargon-free communication.`,
+Co-host in Telia 2024 Q3 Flash (Quarterly event)`,
     technologies: [
       { name: "Python", type: "language" },
       { name: "Streamlit", type: "framework" },

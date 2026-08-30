@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="1.5 1.5 61 61">
+  <defs>
+    <!-- a matched pair's shared glow, echoing the board's mp-breathe pulse -->
+    <radialGradient id="mpGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ef9270" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#ef9270" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- a matched pair: two cards face-up in the SAME colour (the board's "väri per pari"), each
+       carrying a white heart. Colour + shape both say "these two match". Coral is the pair's own
+       accent from MUISTIPARI_FACES. -->
+  <circle cx="32" cy="33" r="25" fill="url(#mpGlow)" />
+
+  <!-- left card, gently tilted -->
+  <g transform="rotate(-8 17 31.5)">
+    <rect x="4" y="10" width="26" height="43" rx="6" fill="#e6845c" stroke="#cf6f4f" stroke-width="1.5" />
+    <g transform="translate(17 31) scale(1.05)">
+      <path
+        d="M0 -0.5 C0 -3.5 -2.5 -6 -5.2 -6 C-8.6 -6 -8.6 -1 -5 2 C-2.6 4 0 6.5 0 6.5 C0 6.5 2.6 4 5 2 C8.6 -1 8.6 -6 5.2 -6 C2.5 -6 0 -3.5 0 -0.5 Z"
+        fill="#fff6ef"
+      />
+    </g>
+  </g>
+
+  <!-- right card, gently tilted the other way -->
+  <g transform="rotate(8 47 32.5)">
+    <rect x="34" y="11" width="26" height="43" rx="6" fill="#e6845c" stroke="#cf6f4f" stroke-width="1.5" />
+    <g transform="translate(47 32) scale(1.05)">
+      <path
+        d="M0 -0.5 C0 -3.5 -2.5 -6 -5.2 -6 C-8.6 -6 -8.6 -1 -5 2 C-2.6 4 0 6.5 0 6.5 C0 6.5 2.6 4 5 2 C8.6 -1 8.6 -6 5.2 -6 C2.5 -6 0 -3.5 0 -0.5 Z"
+        fill="#fff6ef"
+      />
+    </g>
+  </g>
+</svg>

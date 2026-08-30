@@ -1,0 +1,35 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="board">
+      <rect x="1" y="1" width="62" height="62" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#board)">
+    <!-- three continuous colour regions -->
+    <path d="M1 1 H21.5 V21.5 H42.5 V42.5 H1 Z" fill="#E7D6BF"/>
+    <path d="M21.5 1 H63 V42.5 H42.5 V21.5 H21.5 Z" fill="#CFE0D2"/>
+    <path d="M1 42.5 H63 V63 H1 Z" fill="#DDD6EA"/>
+
+    <!-- faint grid: individual cells -->
+    <g stroke="#2B2623" stroke-width="1" opacity="0.4">
+      <path d="M21.5 1 V63 M42.5 1 V63 M1 21.5 H63 M1 42.5 H63"/>
+    </g>
+
+    <!-- bold region borders -->
+    <g fill="none" stroke="#2B2623" stroke-width="2.2" stroke-linejoin="round">
+      <path d="M1 1 H21.5 V21.5 H42.5 V42.5 H1 Z"/>
+      <path d="M21.5 1 H63 V42.5 H42.5 V21.5 H21.5 Z"/>
+      <path d="M1 42.5 H63 V63 H1 Z"/>
+    </g>
+  </g>
+
+  <!-- board outline -->
+  <rect x="1" y="1" width="62" height="62" rx="4" fill="none" stroke="#2B2623" stroke-width="2.4"/>
+
+  <!-- two non-touching houses in different regions -->
+  <g fill="#2B2623">
+    <path d="M11 7 L17 11 V16 H5 V11 Z"/>
+    <path d="M53 28 L59 32 V37 H47 V32 Z"/>
+  </g>
+</svg>

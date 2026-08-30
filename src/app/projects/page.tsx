@@ -1,4 +1,5 @@
 import ProjectEntry from "@/components/ProjectEntry";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import ProjectPlanningSection from "@/components/ProjectPlans";
 import SmallerProjects from "@/components/SmallerTasks";
 import { projects, smallerProjects, projectsPlanned } from "@/data";
@@ -30,9 +31,17 @@ export default function ProjectsPage() {
 
       <section className="mb-16">
         <SectionLabel>main projects</SectionLabel>
-        {projects.map((project, index) => (
-          <ProjectEntry key={index} {...project} />
-        ))}
+        {projects.map((project) =>
+          project.showcase ? (
+            <ProjectShowcase
+              key={project.title}
+              {...project}
+              showcase={project.showcase}
+            />
+          ) : (
+            <ProjectEntry key={project.title} {...project} />
+          )
+        )}
       </section>
 
       <section className="mb-16">

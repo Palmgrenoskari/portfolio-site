@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="5 4.5 55 55">
+  <defs>
+    <!-- amber = pending / focused neuron (matches the board's math accent) -->
+    <radialGradient id="nvAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#f6d27a" stop-opacity="0.95"/>
+      <stop offset="45%"  stop-color="#e3a93f" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#cda24a" stop-opacity="0"/>
+    </radialGradient>
+    <!-- green = fired / solved neuron, the "constellation" glow (board correct-tile #8fd08f) -->
+    <radialGradient id="nvGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#b9e6b9" stop-opacity="0.92"/>
+      <stop offset="45%"  stop-color="#6fbf7f" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#8fd08f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- edges flow left → right (input → hidden → output), mirroring the redesigned board.
+       green edges carry the signal out of fired neurons; amber edges are still pending. -->
+  <g stroke-width="2" stroke-linecap="round" fill="none">
+    <g stroke="#5fbd76" opacity="0.6">
+      <!-- input (fired) → hidden -->
+      <line x1="14" y1="22" x2="32" y2="13"/>
+      <line x1="14" y1="22" x2="32" y2="32"/>
+      <line x1="14" y1="22" x2="32" y2="51"/>
+      <line x1="14" y1="42" x2="32" y2="13"/>
+      <line x1="14" y1="42" x2="32" y2="32"/>
+      <line x1="14" y1="42" x2="32" y2="51"/>
+      <!-- fired hidden neuron → output -->
+      <line x1="32" y1="13" x2="50" y2="22"/>
+      <line x1="32" y1="13" x2="50" y2="42"/>
+    </g>
+    <g stroke="#cda24a" opacity="0.5">
+      <!-- pending hidden neurons → output -->
+      <line x1="32" y1="32" x2="50" y2="22"/>
+      <line x1="32" y1="32" x2="50" y2="42"/>
+      <line x1="32" y1="51" x2="50" y2="22"/>
+      <line x1="32" y1="51" x2="50" y2="42"/>
+    </g>
+  </g>
+
+  <!-- soft halos keep each neuron luminous when scaled down to an icon -->
+  <g>
+    <!-- fired (green glow) -->
+    <circle cx="14" cy="22" r="8.5" fill="url(#nvGreen)"/>
+    <circle cx="14" cy="42" r="8.5" fill="url(#nvGreen)"/>
+    <circle cx="32" cy="13" r="8.5" fill="url(#nvGreen)"/>
+    <!-- pending (amber glow) -->
+    <circle cx="32" cy="32" r="8"   fill="url(#nvAmber)"/>
+    <circle cx="32" cy="51" r="8"   fill="url(#nvAmber)"/>
+    <circle cx="50" cy="42" r="8"   fill="url(#nvAmber)"/>
+    <!-- focused output neuron: bigger amber halo + ring, echoing the focus glow -->
+    <circle cx="50" cy="22" r="9.5" fill="url(#nvAmber)"/>
+    <circle cx="50" cy="22" r="7.6" fill="none" stroke="#e3a93f" stroke-width="1.4" opacity="0.7"/>
+  </g>
+
+  <!-- fired neurons -->
+  <g fill="#4aa563">
+    <circle cx="14" cy="22" r="4.6"/>
+    <circle cx="14" cy="42" r="4.6"/>
+    <circle cx="32" cy="13" r="4.6"/>
+  </g>
+  <!-- pending neurons -->
+  <g fill="#e3a93f">
+    <circle cx="32" cy="32" r="4.6"/>
+    <circle cx="32" cy="51" r="4.6"/>
+    <circle cx="50" cy="22" r="5"/>
+    <circle cx="50" cy="42" r="4.6"/>
+  </g>
+
+  <!-- pale centre glints add sparkle without hurting contrast on the cream plate -->
+  <g>
+    <circle cx="14" cy="22" r="1.5" fill="#e6f6e6"/>
+    <circle cx="14" cy="42" r="1.5" fill="#e6f6e6"/>
+    <circle cx="32" cy="13" r="1.5" fill="#e6f6e6"/>
+    <circle cx="32" cy="32" r="1.4" fill="#fbe7b8"/>
+    <circle cx="32" cy="51" r="1.4" fill="#fbe7b8"/>
+    <circle cx="50" cy="22" r="1.7" fill="#fbe7b8"/>
+    <circle cx="50" cy="42" r="1.4" fill="#fbe7b8"/>
+  </g>
+</svg>

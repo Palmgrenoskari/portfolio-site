@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="1.5 1.5 61 61">
+  <defs>
+    <!-- soft flash halo, echoing the board's 14px lit-cell glow -->
+    <filter id="vkGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.1" />
+    </filter>
+  </defs>
+
+  <!-- "Pehmeä spektri": every cell lit in its own colour (the board's per-tile palette),
+       laid out low→high = warm→violet so a cell's colour rises with its pitch. The nine
+       fills are cellColor(i, 3) for i = 0..8 (see lib/valkky/colors.ts). -->
+
+  <!-- ambient halo: a blurred copy of the grid bleeding a gentle glow -->
+  <g filter="url(#vkGlow)" opacity="0.5">
+    <rect x="2.5" y="2.5" width="17" height="17" rx="5" fill="#d39069" />
+    <rect x="23.5" y="2.5" width="17" height="17" rx="5" fill="#d3c969" />
+    <rect x="44.5" y="2.5" width="17" height="17" rx="5" fill="#a4d369" />
+    <rect x="2.5" y="23.5" width="17" height="17" rx="5" fill="#6bd369" />
+    <rect x="23.5" y="23.5" width="17" height="17" rx="5" fill="#69d3a0" />
+    <rect x="44.5" y="23.5" width="17" height="17" rx="5" fill="#69ced3" />
+    <rect x="2.5" y="44.5" width="17" height="17" rx="5" fill="#6994d3" />
+    <rect x="23.5" y="44.5" width="17" height="17" rx="5" fill="#7769d3" />
+    <rect x="44.5" y="44.5" width="17" height="17" rx="5" fill="#b069d3" />
+  </g>
+
+  <!-- crisp tiles -->
+  <g>
+    <rect x="2.5" y="2.5" width="17" height="17" rx="4.5" fill="#d39069" />
+    <rect x="23.5" y="2.5" width="17" height="17" rx="4.5" fill="#d3c969" />
+    <rect x="44.5" y="2.5" width="17" height="17" rx="4.5" fill="#a4d369" />
+    <rect x="2.5" y="23.5" width="17" height="17" rx="4.5" fill="#6bd369" />
+    <rect x="23.5" y="23.5" width="17" height="17" rx="4.5" fill="#69d3a0" />
+    <rect x="44.5" y="23.5" width="17" height="17" rx="4.5" fill="#69ced3" />
+    <rect x="2.5" y="44.5" width="17" height="17" rx="4.5" fill="#6994d3" />
+    <rect x="23.5" y="44.5" width="17" height="17" rx="4.5" fill="#7769d3" />
+    <rect x="44.5" y="44.5" width="17" height="17" rx="4.5" fill="#b069d3" />
+  </g>
+</svg>

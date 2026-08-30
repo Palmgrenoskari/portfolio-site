@@ -12,12 +12,48 @@ export interface Technology {
   type: TechnologyType;
 }
 
+export type PlateStyle = "stone" | "cream";
+
+// String keys only: Project crosses the server->client boundary, so no component refs.
+export type FeatureIcon =
+  | "swords"
+  | "git-branch"
+  | "store"
+  | "moon-star"
+  | "calendar-days"
+  | "newspaper"
+  | "trending-up"
+  | "users";
+
+export interface ShowcaseTile {
+  src: string;
+  alt: string;
+}
+
+export interface ProjectShowcase {
+  /** Brand mark: an image, or a lettered tile for projects without a logo file. */
+  logo?: string;
+  mark?: { letter: string; bg: string; fg: string };
+  hook: string;
+  /** Rendered joined with " · ". */
+  stats: string[];
+  features: { icon: FeatureIcon; text: string }[];
+  /** Technical paragraph, collapsed by default. */
+  underTheHood: string;
+  plate: PlateStyle;
+  /** With `background`, tiles are overlaid on the image; without, they form a mosaic. */
+  hero: { background?: string; tiles: ShowcaseTile[] };
+  /** Art row on the projects page. */
+  strip: ShowcaseTile[];
+}
+
 export interface Project {
   title: string;
   description: string;
   liveUrl?: string;
   images?: string[];
   technologies: Technology[];
+  showcase?: ProjectShowcase;
 }
 
 export interface SmallerProject {

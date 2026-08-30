@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Suunta ("direction"): a small flock of the game's own "Pyöreä" songbirds facing right,
+       sized to reach the tile edges (no wasted border). Red leads at the left, blue trails upper
+       right, yellow trails lower right. The three colour groups are the game's core — each a
+       distinct silhouette so they read by shape as well as hue (colour-blind safety): red = crest,
+       blue = rounder body, yellow = forked tail. The load-bearing group colours
+       (suunta red / blue / yellow) carry the identity. -->
+
+  <!-- red group (crest) — the lead bird, left -->
+  <g transform="translate(1.2 18.05) scale(0.9)">
+    <path d="M12 21 L2 16 L7 21 L2 26 Z" fill="#d4573f" />
+    <ellipse cx="22" cy="21" rx="13" ry="9.5" fill="#d4573f" />
+    <ellipse cx="19" cy="24.5" rx="7.5" ry="4" fill="#fff" opacity="0.16" />
+    <path d="M31 7.5 L34.5 0.5 L38.5 7.5 Z" fill="#d4573f" />
+    <circle cx="35" cy="14" r="6.5" fill="#d4573f" />
+    <path d="M41 11 L50 13.5 L41 16 Z" fill="#d4573f" />
+    <path d="M16 19 Q24 10 33 16 Q26 24 16 20 Z" fill="rgba(0,0,0,0.15)" />
+    <circle cx="37" cy="12.7" r="2" fill="#fff" />
+    <circle cx="37.7" cy="12.9" r="0.95" fill="#3a352e" />
+  </g>
+
+  <!-- blue group (rounder body) — upper right -->
+  <g transform="translate(32 -2.35) scale(0.58)">
+    <path d="M12 21 L2 16 L7 21 L2 26 Z" fill="#3f7bb5" />
+    <ellipse cx="22" cy="21" rx="13" ry="11" fill="#3f7bb5" />
+    <ellipse cx="19" cy="24.5" rx="7.5" ry="4" fill="#fff" opacity="0.16" />
+    <circle cx="35" cy="14" r="6.5" fill="#3f7bb5" />
+    <path d="M41 11 L50 13.5 L41 16 Z" fill="#3f7bb5" />
+    <path d="M16 19 Q24 10 33 16 Q26 24 16 20 Z" fill="rgba(0,0,0,0.15)" />
+    <circle cx="37" cy="12.7" r="2" fill="#fff" />
+    <circle cx="37.7" cy="12.9" r="0.95" fill="#3a352e" />
+  </g>
+
+  <!-- yellow group (forked tail) — lower right -->
+  <g transform="translate(30 43.7) scale(0.6)">
+    <path d="M12 21 L-3 13 L4 21 L-3 29 Z" fill="#c98a1e" />
+    <ellipse cx="22" cy="21" rx="13" ry="9.5" fill="#c98a1e" />
+    <ellipse cx="19" cy="24.5" rx="7.5" ry="4" fill="#fff" opacity="0.16" />
+    <circle cx="35" cy="14" r="6.5" fill="#c98a1e" />
+    <path d="M41 11 L50 13.5 L41 16 Z" fill="#c98a1e" />
+    <path d="M16 19 Q24 10 33 16 Q26 24 16 20 Z" fill="rgba(0,0,0,0.15)" />
+    <circle cx="37" cy="12.7" r="2" fill="#fff" />
+    <circle cx="37.7" cy="12.9" r="0.95" fill="#3a352e" />
+  </g>
+</svg>

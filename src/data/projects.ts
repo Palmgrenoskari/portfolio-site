@@ -1,8 +1,23 @@
-import { Project, SmallerProject, PlannedProject } from "./types";
+import { Project, SmallerProject, PlannedProject, ShowcaseTile } from "./types";
+
+// --- showcase helpers -------------------------------------------------------
+
+const EX = "/images/projects/exilium";
+const PP = "/images/projects/paivanpulma";
+
+const monster = (name: string): ShowcaseTile => ({
+  src: `${EX}/monsters/${name}.webp`,
+  alt: name.replace(/_/g, " "),
+});
+
+const game = (slug: string): ShowcaseTile => ({
+  src: `${PP}/games/${slug}.svg`,
+  alt: slug,
+});
 
 export const projects: Project[] = [
   {
-    title: "Exilium - Browser Idle RPG",
+    title: "Exilium - Browser Idle MMORPG",
     description: `A free browser-based idle MMORPG, classic MMORPG experience packaged into idle genre. Train 12 skills, shape your build across five mastery trees, auto-battle nearly 90 monsters over 11 regions, chase six-rarity loot and 65 handcrafted uniques, and trade on a player-run order-book marketplace — all of it keeps progressing while the tab is closed.
 
       Under the hood the game is server-authoritative: a Fastify + Prisma backend owns all progression and re-simulates every tick with a deterministic seeded RNG, while the React client runs a mirrored predictor engine kept byte-identical to the server by a dedicated parity test suite. Also includes an action queue, real-time farming timers, leaderboards, quests, achievements, in-game chat and a custom pixel-art asset pipeline.
@@ -11,6 +26,55 @@ export const projects: Project[] = [
 
       Feel free to register and try it out.`,
     liveUrl: "https://exiliumidle.com",
+    showcase: {
+      logo: `${EX}/logo.png`,
+      hook: "A classic MMORPG at idle pace — fights run themselves, and your exile keeps working while the tab is closed.",
+      stats: [
+        "skilling",
+        "mastery trees",
+        "auto-battle",
+        "offline progress",
+        "player economy",
+      ],
+      features: [
+        {
+          icon: "swords",
+          text: "Auto-battle a bestiary of monsters across an illustrated world map",
+        },
+        {
+          icon: "git-branch",
+          text: "Forge an archetype by mixing mastery trees — not a fixed class",
+        },
+        {
+          icon: "store",
+          text: "Player-run order-book marketplace — no NPC shops feed the economy",
+        },
+        {
+          icon: "moon-star",
+          text: "Skills, farming timers and fights keep progressing offline",
+        },
+      ],
+      underTheHood:
+        "Server-authoritative: a Fastify + Prisma backend owns all progression and re-simulates every tick with a deterministic seeded RNG. The React client runs a mirrored predictor engine kept byte-identical to the server by a dedicated parity test suite. Also: an action queue, real-time farming timers, leaderboards, quests, achievements, in-game chat and a custom pixel-art asset pipeline.",
+      plate: "stone",
+      hero: {
+        background: `${EX}/map.webp`,
+        tiles: [],
+      },
+      // Ascending monster level, left to right.
+      strip: [
+        monster("chicken"), // 3
+        monster("coconut_crab"), // 22
+        monster("forest_wolf"), // 35
+        monster("forest_witch"), // 90
+        monster("sand_wyrm"), // 110
+        monster("tower_archmage"), // 165
+        monster("hellhound"), // 180
+        monster("ancient_sphinx"), // 195
+        monster("kraken_spawn"), // 262
+        monster("oblivion_herald"), // 357
+      ],
+    },
     technologies: [
       { name: "TypeScript", type: "language" },
       { name: "React", type: "framework" },
@@ -37,6 +101,56 @@ export const projects: Project[] = [
 
       Try it out :)!`,
     liveUrl: "https://paivanpulma.fi",
+    showcase: {
+      mark: { letter: "P", bg: "#6f9d72", fg: "#f3ede2" },
+      hook: "Päivä kerrallaan terävämpi — a growing library of Finnish brain games, with fresh puzzles every morning.",
+      stats: ["daily puzzles", "free play", "skill ranks", "ad-free"],
+      features: [
+        {
+          icon: "calendar-days",
+          text: "Deterministic daily puzzles — the same board for everyone",
+        },
+        {
+          icon: "newspaper",
+          text: "Crosswords and word groups generated nightly from Finnish news",
+        },
+        {
+          icon: "trending-up",
+          text: "Per-game ELO (Taito) sets your difficulty and climbs you through the ranks",
+        },
+        {
+          icon: "users",
+          text: "Friends, leaderboards, daily championship, streaks and shareable results",
+        },
+      ],
+      underTheHood:
+        "A nightly crawler pulls fresh words from Yle, Iltalehti and Ilta-Sanomat; Gemini turns them into crosswords, grouping puzzles and clues, so the dailies track current events. Turborepo monorepo: a Next.js web app and a Fastify + Prisma API on PostgreSQL. Accounts via Google or email, guest progress carries over on registration, a full archive of past puzzles — mobile-first and ad-free.",
+      plate: "cream",
+      hero: {
+        tiles: [
+          game("sanailija"),
+          game("ristikko"),
+          game("sudoku"),
+          game("naapurit"),
+          game("matikkasade"),
+          game("valkky"),
+          game("luokittelija"),
+          game("suunta"),
+        ],
+      },
+      strip: [
+        game("ristikko"),
+        game("matikkasade"),
+        game("neuroverkko"),
+        game("elementit"),
+        game("calcudoku"), // Laskudoku
+        game("naapurit"),
+        game("suunta"),
+        game("luokittelija"),
+        game("muistipari"),
+        game("valkky"),
+      ],
+    },
     technologies: [
       { name: "TypeScript", type: "language" },
       { name: "React", type: "framework" },

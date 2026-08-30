@@ -1,17 +1,24 @@
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import TechBadge from "@/components/TechBadge";
+import BrandMark from "@/components/BrandMark";
+import ProjectShowcaseHome from "@/components/ProjectShowcaseHome";
 import { defaultStack, projects } from "@/data";
+import { Project, ProjectShowcase } from "@/data/types";
 
-const firstSentence = (text: string) =>
-  text
-    .trim()
-    .split("\n")[0]
-    .split(/(?<=\.)\s/)[0];
+// Featured = the live projects that carry a showcase (the two games).
+const featured = projects
+  .filter((p): p is Project & { showcase: ProjectShowcase } => !!p.showcase)
+  .slice(0, 2);
 
-// Featured = the two live, current projects.
-const featured = projects.slice(0, 2);
+// Same source of truth for the "currently building" links.
+const building = featured.map((p) => ({
+  label: new URL(p.liveUrl!).host.replace(/^www\./, ""),
+  href: p.liveUrl!,
+  logo: p.showcase.logo,
+  mark: p.showcase.mark,
+  title: p.title.split(" - ")[0],
+}));
 
 export default function Home() {
   return (
@@ -27,8 +34,9 @@ export default function Home() {
             with customers.
           </p>
           <p>
-            Recently my work has mainly revolved around data retrieval
-            tooling/MCPs for LLMs (RAG, Text2SQL, ...).
+            Currently primarily working with data-retrieval tooling for LLMs
+            (RAG, Text2SQL, Ingestion pipelines from various source systems),
+            agentic loops and MCP.
           </p>
           <p>Varying hobby projects on the side :)</p>
         </div>
@@ -38,28 +46,25 @@ export default function Home() {
             <span className="text-accent">$</span> currently building
           </p>
           <ul className="mt-1.5 space-y-1 pl-4">
-            <li>
-              <span className="text-accent">&rarr;</span>{" "}
-              <a
-                href="https://exiliumidle.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg/90 hover:text-accent hover:underline transition-colors"
-              >
-                Exiliumidle.com
-              </a>
-            </li>
-            <li>
-              <span className="text-accent">&rarr;</span>{" "}
-              <a
-                href="https://paivanpulma.fi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg/90 hover:text-accent hover:underline transition-colors"
-              >
-                Päivänpulma.fi
-              </a>
-            </li>
+            {building.map((b) => (
+              <li key={b.href} className="flex items-center gap-2">
+                <span className="text-accent">&rarr;</span>
+                <BrandMark
+                  logo={b.logo}
+                  mark={b.mark}
+                  size={16}
+                  alt={`${b.title} logo`}
+                />
+                <a
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fg/90 hover:text-accent hover:underline transition-colors"
+                >
+                  {b.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -101,36 +106,7 @@ export default function Home() {
 
         <div className="grid gap-4 sm:grid-cols-2">
           {featured.map((project) => (
-            <div
-              key={project.title}
-              className="bg-surface border border-border rounded-lg p-5 flex flex-col transition-colors hover:border-accent/50"
-            >
-              <h3 className="text-lg font-semibold">
-                {project.title.split(" - ")[0]}
-              </h3>
-              <p className="font-sans text-sm text-fg/80 leading-relaxed mt-2 grow">
-                {firstSentence(project.description)}.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.technologies.slice(0, 10).map((tech) => (
-                  <TechBadge
-                    key={tech.name}
-                    name={tech.name}
-                    type={tech.type}
-                  />
-                ))}
-              </div>
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center font-mono text-sm text-accent hover:underline mt-4"
-                >
-                  visit live site <ExternalLink className="ml-1 w-4 h-4" />
-                </a>
-              )}
-            </div>
+            <ProjectShowcaseHome key={project.title} project={project} />
           ))}
         </div>
       </section>
