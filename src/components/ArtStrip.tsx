@@ -21,7 +21,7 @@ export function ArtTile({
     <div
       className={`${
         lightTiles
-          ? "bg-[#faf7f2] p-1"
+          ? "bg-[#faf7f2]"
           : "bg-surface ring-1 ring-border"
       } relative rounded-[6px] overflow-hidden shrink-0 ${
         size ? "" : "w-full aspect-square"
@@ -33,7 +33,12 @@ export function ArtTile({
         alt={tile.alt}
         width={size ?? 64}
         height={size ?? 64}
-        className={`object-contain w-full h-full ${
+        // The light-tile inset lives on the image, not the container: iOS
+        // Safari resolves a child's percentage height inside a *padded*
+        // aspect-ratio box against the wrong box, pushing the icon down and
+        // clipping it. With border-box sizing the padding stays inside the
+        // tile and object-contain centres the art in the remaining area.
+        className={`object-contain w-full h-full ${lightTiles ? "p-1" : ""} ${
           pixelated ? "[image-rendering:pixelated]" : ""
         }`}
       />
