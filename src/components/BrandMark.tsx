@@ -21,6 +21,7 @@ export default function BrandMark({
         alt={alt}
         width={size}
         height={size}
+        loading="eager"
         className="rounded-sm shrink-0"
       />
     );

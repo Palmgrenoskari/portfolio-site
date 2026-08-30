@@ -24,6 +24,7 @@ export default function EducationEntry({
           alt={`${institution} logo`}
           width={56}
           height={56}
+          loading="eager"
           className={`object-contain shrink-0 ${
             invertInLight ? "invert dark:invert-0" : ""
           }`}

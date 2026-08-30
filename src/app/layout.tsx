@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImagePreloader from "@/components/ImagePreloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="bg-bg text-fg min-h-screen flex flex-col w-full">
+        <ImagePreloader />
         <Header />
         <main className="flex-grow w-full px-4 py-8 sm:py-12">{children}</main>
         <Footer />

@@ -33,6 +33,7 @@ export function ArtTile({
         alt={tile.alt}
         width={size ?? 64}
         height={size ?? 64}
+        loading="eager"
         // The light-tile inset lives on the image, not the container: iOS
         // Safari resolves a child's percentage height inside a *padded*
         // aspect-ratio box against the wrong box, pushing the icon down and

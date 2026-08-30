@@ -27,6 +27,7 @@ export default function CertificationEntry({
           alt={`${title} badge`}
           width={56}
           height={56}
+          loading="eager"
           className="object-contain shrink-0"
         />
         <div>
