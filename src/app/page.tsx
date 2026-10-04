@@ -43,7 +43,15 @@ export default function Home() {
 
         <div className="font-mono text-sm text-muted mt-5">
           <p>
-            <span className="text-accent">$</span> currently building
+            <span className="text-accent">$</span> currently building @{" "}
+            <a
+              href="https://peligengames.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fg/90 hover:text-accent hover:underline transition-colors"
+            >
+              peligengames.com
+            </a>
           </p>
           <ul className="mt-1.5 space-y-1 pl-4">
             {building.map((b) => (

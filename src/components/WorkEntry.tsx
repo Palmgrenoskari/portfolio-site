@@ -7,6 +7,7 @@ type WorkEntryProps = WorkEntryType;
 export default function WorkEntry({
   logo,
   company,
+  url,
   role,
   period,
   description,
@@ -29,7 +30,20 @@ export default function WorkEntry({
           className="object-contain shrink-0"
         />
         <div>
-          <h3 className="text-lg font-semibold">{company}</h3>
+          <h3 className="text-lg font-semibold">
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent hover:underline transition-colors"
+              >
+                {company}
+              </a>
+            ) : (
+              company
+            )}
+          </h3>
           <p className="font-sans text-fg/80">{role}</p>
           <p className="font-mono text-xs text-muted mt-0.5">{period}</p>
         </div>

@@ -2,6 +2,25 @@ import { WorkEntry } from "./types";
 
 export const workEntries: WorkEntry[] = [
   {
+    logo: "/images/peligen_icon.svg",
+    company: "PeliGen Oy",
+    url: "https://peligengames.com",
+    role: "Founder",
+    period: "Oct 2026 - Present",
+    description: `My own small indie game studio, run alongside my day job. PeliGen builds and operates games that fit into everyday life.
+
+Currently two live games, both in alpha: Exilium, a browser idle MMORPG, and Päivänpulma, a Finnish daily puzzle platform.`,
+    technologies: [
+      { name: "TypeScript", type: "language" },
+      { name: "React", type: "framework" },
+      { name: "Next.js", type: "framework" },
+      { name: "Fastify", type: "framework" },
+      { name: "PostgreSQL", type: "database" },
+      { name: "Vercel", type: "cloud" },
+      { name: "Railway", type: "cloud" },
+    ],
+  },
+  {
     logo: "/images/digia_logo_v1.png",
     company: "Digia",
     role: "Software Robotics Developer",

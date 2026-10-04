@@ -89,6 +89,7 @@ export interface EducationEntry {
 export interface WorkEntry {
   logo: string;
   company: string;
+  url?: string;
   role: string;
   period: string;
   description: string;
