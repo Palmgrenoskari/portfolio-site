@@ -29,16 +29,19 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl font-bold mt-2">Oskari Palmgren</h1>
         <div className="font-sans text-fg/80 leading-relaxed mt-4 max-w-xl space-y-3">
           <p>
-            Full-time developer working on software robotics and modern
-            AI-driven solutions, building useful products in close collaboration
-            with customers.
+            Software developer at Digia, building software robotics and
+            AI-driven solutions in close collaboration with customers.
           </p>
           <p>
-            Currently primarily working with data-retrieval tooling for LLMs
-            (RAG, Text2SQL, Ingestion pipelines from various source systems),
-            agentic loops and MCP.
+            Focused on LLM data-retrieval systems, including modular and
+            agentic RAG, Text-to-SQL, and synchronised ingestion pipelines.
+            Also developing agentic workflows and MCP servers to expose
+            services to AI clients.
           </p>
-          <p>Varying hobby projects on the side :)</p>
+          <p>
+            Alongside that, I run PeliGen Oy and build and operate two browser
+            games end to end.
+          </p>
         </div>
 
         <div className="font-mono text-sm text-muted mt-5">

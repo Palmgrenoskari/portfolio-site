@@ -7,15 +7,16 @@ export const workEntries: WorkEntry[] = [
     url: "https://peligengames.com",
     role: "Founder",
     period: "Oct 2026 - Present",
-    description: `My own small indie game studio, run alongside my day job. PeliGen builds and operates games that fit into everyday life.
+    description: `My own indie game studio, run alongside my full-time role, focusing on games designed to fit around everyday life.
 
-Currently two live games, both in alpha: Exilium, a browser idle MMORPG, and Päivänpulma, a Finnish daily puzzle platform.`,
+I lead product direction, design, full-stack development, infrastructure and community for two games in alpha: Exilium, a browser idle MMORPG, and Päivänpulma, a Finnish daily puzzle platform.`,
     technologies: [
       { name: "TypeScript", type: "language" },
       { name: "React", type: "framework" },
       { name: "Next.js", type: "framework" },
       { name: "Fastify", type: "framework" },
       { name: "PostgreSQL", type: "database" },
+      { name: "Prisma", type: "database" },
       { name: "Vercel", type: "cloud" },
       { name: "Railway", type: "cloud" },
     ],
@@ -25,9 +26,9 @@ Currently two live games, both in alpha: Exilium, a browser idle MMORPG, and Pä
     company: "Digia",
     role: "Software Robotics Developer",
     period: "Aug 2025 - Present",
-    description: `Software robotics and modern AI-driven solutions, building useful products in close collaboration with customers.
+    description: `Developing software robotics and AI-driven solutions in close collaboration with customers.
 
-Currently primarily working with data-retrieval tooling for LLMs (RAG, Text2SQL, Ingestion pipelines from various source systems), agentic loops and MCP.`,
+Building LLM data-retrieval solutions, including modular and agentic RAG, Text-to-SQL, and synchronised ingestion pipelines across multiple source systems. Also designing and implementing agentic workflows and MCP servers that expose selected services to AI clients.`,
     technologies: [
       { name: "Python", type: "language" },
       { name: "TypeScript", type: "language" },
@@ -45,9 +46,9 @@ Currently primarily working with data-retrieval tooling for LLMs (RAG, Text2SQL,
     company: "Telia Finland",
     role: "IA Developer Trainee",
     period: "May 2024 - Aug 2024",
-    description: `Developed applications for various internal-use intelligent automation projects. Mostly LLM/RAG solutions.
+    description: `Built internal applications for intelligent-automation projects, primarily using LLMs and RAG.
 
-Co-host in Telia 2024 Q3 Flash (Quarterly event)`,
+Co-hosted Telia's Q3 Flash quarterly event in 2024.`,
     technologies: [
       { name: "Python", type: "language" },
       { name: "Streamlit", type: "framework" },
@@ -65,7 +66,7 @@ Co-host in Telia 2024 Q3 Flash (Quarterly event)`,
     role: "Warehouse Worker",
     period: "Jan 2020 - Oct 2025",
     description:
-      "Physical work in Hesburger's central warehouse. Full hours during the summer (excl. 2024), 30-60h/month during studies.",
+      "Physical work in Hesburger's central warehouse. Full-time during summers (excl. 2024) and 30–60 hours per month alongside studies.",
     technologies: [
       { name: "People skills", type: "soft_skill" },
       { name: "Friendships", type: "soft_skill" },
